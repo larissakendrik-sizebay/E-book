@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Calendário de Moda — opções de logo</title>
+<style>
+@import url('fonts.css');
+:root{--pink:#FF9ACB;--ink:#0B0B0B;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d9;font-family:'Instrument Sans',sans-serif;padding:40px;width:1880px}
+.sheet{display:grid;grid-template-columns:880px 880px;gap:36px 40px}
+.item .lab{font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;color:#222}
+.card{width:880px;height:640px;position:relative;overflow:hidden}
+.abs{position:absolute;white-space:nowrap;line-height:1}
+.c{left:50%;transform:translateX(-50%)}
+
+/* ---------- 01 Sticker editorial (serifada alta + script em adesivo) ---------- */
+.A{background:#fff;color:var(--ink)}
+.A .tall{font-family:'Bodoni Moda',serif;font-weight:900;transform-origin:center;letter-spacing:-.02em}
+.A .w1{font-size:132px;transform:translateX(-50%) scale(.66,1.75);left:50%;top:96px}
+.A .w2{font-size:232px;transform:translateX(-50%) scale(.66,1.75);left:50%;top:352px}
+.A .scr{font-family:'Pinyon Script',cursive;font-size:230px;left:50%;top:238px;transform:translateX(-50%) rotate(-7deg);
+  -webkit-text-stroke:26px #fff;paint-order:stroke fill;color:var(--ink);filter:drop-shadow(0 6px 10px rgba(0,0,0,.18))}
+.A .mini{font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- 02 Pop gordinho (letras dançando) ---------- */
+.B{background:#f6f3ec;background-image:linear-gradient(#d9d4c8 2px,transparent 2px),linear-gradient(90deg,#d9d4c8 2px,transparent 2px);background-size:56px 56px}
+.B .stk{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%) rotate(-3deg);text-align:center;
+  filter:drop-shadow(8px 0 0 #fff) drop-shadow(-8px 0 0 #fff) drop-shadow(0 8px 0 #fff) drop-shadow(0 -8px 0 #fff) drop-shadow(6px 6px 0 #fff) drop-shadow(-6px -6px 0 #fff) drop-shadow(6px -6px 0 #fff) drop-shadow(-6px 6px 0 #fff) drop-shadow(0 10px 14px rgba(0,0,0,.2))}
+.B .ln{font-family:'Bagel Fat One',cursive;color:var(--pink);-webkit-text-stroke:9px var(--ink);paint-order:stroke fill;line-height:.92;text-transform:uppercase;white-space:nowrap}
+.B .ln span{display:inline-block}
+.B .l1{font-size:128px}.B .l2{font-size:176px;margin-top:-6px}
+.B .pill{position:absolute;left:50%;bottom:62px;transform:translateX(-50%) rotate(-2deg);background:#c9f26b;color:var(--ink);font-weight:600;font-size:22px;padding:10px 26px;border-radius:40px;white-space:nowrap;border:2px solid var(--ink)}
+.B .heart{position:absolute;left:44px;top:34px;font-size:46px;color:#e8334a}
+
+/* ---------- 03 Pílulas + caixa-alta com script cruzando ---------- */
+.C{background:var(--pink);color:var(--ink)}
+.C .pills{position:absolute;left:60px;right:60px;top:48px;display:flex;align-items:center;gap:16px}
+.C .pills i{flex:1;height:2px;background:var(--ink)}
+.C .pills b{border:2px solid var(--ink);border-radius:30px;padding:7px 20px;font-size:16px;letter-spacing:.1em}
+.C .big{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.9;letter-spacing:-.01em}
+.C .t1{font-size:236px;left:50%;top:100px;transform:translateX(-50%) scale(1.12,1);}
+.C .t2{font-size:236px;left:50%;top:322px;transform:translateX(-50%) scale(1.12,1);}
+.C .scr{font-family:'Pinyon Script',cursive;font-size:200px;left:50%;top:238px;transform:translateX(-50%) rotate(-5deg);color:#fff;
+  filter:drop-shadow(0 3px 0 var(--ink)) drop-shadow(3px 0 0 var(--ink)) drop-shadow(-3px 0 0 var(--ink)) drop-shadow(0 -3px 0 var(--ink))}
+.C .foot{position:absolute;left:60px;right:60px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:600;letter-spacing:.06em}
+.C .foot em{font-family:'Instrument Serif',serif;font-style:italic;font-size:30px;font-weight:400;letter-spacing:0}
+
+/* ---------- 04 Elegante (itálica gigante + Anton) ---------- */
+.D{background:#fff;color:var(--ink)}
+.D .it{font-family:'Instrument Serif',serif;font-style:italic;font-size:214px;letter-spacing:-.045em;left:52px;top:128px}
+.D .hl{position:absolute;left:408px;top:392px;width:420px;height:112px;background:var(--pink);transform:rotate(-2deg)}
+.D .dm{font-family:'Anton',sans-serif;font-size:118px;left:430px;top:392px;letter-spacing:.02em;text-transform:uppercase;line-height:112px}
+.D .top{position:absolute;left:50px;right:50px;top:44px;display:flex;justify-content:space-between;font-size:17px;font-weight:600}
+.D .bot{position:absolute;left:50px;right:50px;bottom:44px;display:flex;justify-content:space-between;align-items:center}
+.D .bot .pill{border:2px solid var(--ink);border-radius:30px;padding:8px 22px;font-size:16px;font-weight:600;letter-spacing:.08em}
+.D .bot .pill.f{background:var(--ink);color:#fff}
+
+/* ---------- 05 Ícone de calendário + assinatura ---------- */
+.E{background:var(--ink);color:#fff}
+.E .icon{position:absolute;left:66px;top:200px;width:236px;height:236px;background:var(--pink);border-radius:34px}
+.E .icon:before,.E .icon:after{content:"";position:absolute;top:-22px;width:26px;height:64px;background:#fff;border-radius:14px;border:6px solid var(--ink)}
+.E .icon:before{left:50px}.E .icon:after{right:50px}
+.E .icon .hd{position:absolute;left:0;right:0;top:0;height:78px;background:var(--ink);border-radius:34px 34px 0 0;opacity:0}
+.E .grid{position:absolute;left:26px;right:26px;bottom:26px;top:58px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.E .grid span{background:var(--ink);border-radius:8px;opacity:.9}
+.E .grid span.on{background:#fff}
+.E .grid span.dot{background:transparent;border:5px solid var(--ink)}
+.E .t1{font-family:'Anton',sans-serif;font-size:112px;left:334px;top:196px;text-transform:uppercase;letter-spacing:.005em;line-height:.95}
+.E .t2{font-family:'Pinyon Script',cursive;font-size:128px;left:346px;top:290px;color:var(--pink);transform:rotate(-4deg)}
+.E .t3{font-family:'Anton',sans-serif;font-size:136px;left:430px;top:322px;color:#fff;opacity:0}
+.E .sub{position:absolute;left:338px;top:424px;font-size:17px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#ddd}
+
+/* ---------- 06 Selo / carimbo circular ---------- */
+.F{background:#fff;display:flex;align-items:center;justify-content:center}
+.F svg{width:600px;height:600px}
+.F .side{position:absolute;font-family:'Instrument Serif',serif;font-style:italic;font-size:28px}
+</style></head>
+<body>
+<div class="sheet">
+
+  <div class="item"><div class="lab">01 · Sticker editorial</div>
+  <div class="card A">
+    <div class="abs mini" style="left:50px;top:44px">Sizebay</div>
+    <div class="abs mini" style="right:50px;top:44px">Edição anual</div>
+    <div class="abs tall w1">CALENDÁRIO</div>
+    <div class="abs tall w2">MODA</div>
+    <div class="abs scr">de</div>
+  </div></div>
+
+  <div class="item"><div class="lab">02 · Pop gordinho (adesivo)</div>
+  <div class="card B">
+    <div class="heart">♥</div>
+    <div class="stk">
+      <div class="ln l1" data-t="Calendário"></div>
+      <div class="ln l2" data-t="de Moda"></div>
+    </div>
+    <div class="pill">o ano inteiro na palma da mão &lt;3</div>
+  </div></div>
+
+  <div class="item"><div class="lab">03 · Pílulas + script cruzando</div>
+  <div class="card C">
+    <div class="pills"><b>JAN</b><i></i><b>DEZ</b></div>
+    <div class="abs big t1">Moda</div>
+    <div class="abs big t2">2027</div>
+    <div class="abs scr">calendário</div>
+    <div class="foot"><span>SIZEBAY</span><em>de olho no ano inteiro</em></div>
+  </div></div>
+
+  <div class="item"><div class="lab">04 · Elegante (itálica + faixa rosa)</div>
+  <div class="card D">
+    <div class="top"><span>Moda</span><span>Sizebay</span><span>Varejo</span></div>
+    <div class="abs it">calendário</div>
+    <div class="hl"></div>
+    <div class="abs dm">de moda</div>
+    <div class="bot"><span class="pill">DATAS · FEIRAS · COLEÇÕES</span><span class="pill f">2027 →</span></div>
+  </div></div>
+
+  <div class="item"><div class="lab">05 · Ícone de calendário</div>
+  <div class="card E">
+    <div class="icon"><div class="grid" id="g"></div></div>
+    <div class="abs t1">Calendário</div>
+    <div class="abs t2">de moda</div>
+    <div class="sub">Edição 2027 · Sizebay</div>
+  </div></div>
+
+  <div class="item"><div class="lab">06 · Selo carimbo</div>
+  <div class="card F">
+    <svg viewBox="0 0 600 600">
+      <circle cx="300" cy="300" r="290" fill="#FF9ACB" stroke="#0B0B0B" stroke-width="6"/>
+      <circle cx="300" cy="300" r="188" fill="none" stroke="#0B0B0B" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+      <defs><path id="c" d="M300,300 m-228,0 a228,228 0 1,1 456,0 a228,228 0 1,1 -456,0"/></defs>
+      <text font-family="Anton" font-size="40" fill="#0B0B0B"><textPath href="#c" startOffset="0" textLength="1420" lengthAdjust="spacing">CALENDÁRIO DE MODA ✿ EDIÇÃO 2027 ✿ </textPath></text>
+      <text x="300" y="368" text-anchor="middle" font-family="Pinyon Script" font-size="150" fill="#0B0B0B" transform="rotate(-6 300 300)">Moda</text>
+      <text x="300" y="254" text-anchor="middle" font-family="Anton" font-size="38" letter-spacing="5" fill="#0B0B0B">CALENDÁRIO</text>
+      <text x="300" y="420" text-anchor="middle" font-family="Instrument Sans" font-weight="600" font-size="20" letter-spacing="9" fill="#0B0B0B">SIZEBAY</text>
+    </svg>
+  </div></div>
+
+</div>
+<script>
+// letras "dançando" no logo 02
+document.querySelectorAll('.B .ln').forEach((el,li)=>{
+  const t=el.dataset.t, rots=[-5,4,-3,6,-4,3,-6,5,-2,4];
+  [...t].forEach((ch,i)=>{
+    const s=document.createElement('span'); s.textContent=ch===' '?' ':ch;
+    s.style.transform=`translateY(${(i%2?9:-7)}px) rotate(${rots[(i+li*3)%rots.length]}deg)`;
+    el.appendChild(s);
+  });
+});
+// grade do ícone
+const g=document.getElementById('g'); const on=[8,13];
+for(let i=0;i<20;i++){const s=document.createElement('span'); if(i===8)s.className='on'; if(i===13)s.className='dot'; g.appendChild(s);}
+</script>
+</body></html>
