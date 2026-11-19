@@ -5,7 +5,7 @@ const fs = require('fs');
 
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1960, height: 1400 }, deviceScaleFactor: 1 });
+  const p = await b.newPage({ viewport: { width: 1960, height: 1400 }, deviceScaleFactor: 2 });
   await p.goto('file://' + path.join(__dirname, 'logos.html'));
   await p.evaluate(() => document.fonts.ready);
   await p.waitForTimeout(500);
