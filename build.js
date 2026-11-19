@@ -9,14 +9,17 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
 // ---------- identidade ----------
-// Cada trimestre tem uma cor própria (rosa, laranja, vinho, preto) — a mesma lógica vale para o checklist.
-const Q = [
-  { bg: '#FF9ACB', ink: '#0B0B0B', accent: '#6B0F33', sbg: '#0B0B0B', sfg: '#FF9ACB' }, // 1º tri
-  { bg: '#FF4F2B', ink: '#0B0B0B', accent: '#FFF1E6', sbg: '#FF9ACB', sfg: '#0B0B0B' }, // 2º tri
-  { bg: '#6B0F33', ink: '#FFF1E6', accent: '#FF9ACB', sbg: '#FF9ACB', sfg: '#0B0B0B' }, // 3º tri
-  { bg: '#0B0B0B', ink: '#FFF1E6', accent: '#FF9ACB', sbg: '#FF9ACB', sfg: '#0B0B0B' }, // 4º tri
-];
-const CREAM = '#F4EFE6';
+// Paleta: só preto, branco e rosa.
+// Páginas de calendário (dados) = fundo branco ou preto, com o rosa só nos detalhes.
+// Fundo rosa/preto cheio fica para capa, respiros e blocos de destaque (dica, CTA, contracapa).
+const T = {
+  white: { bg: '#FFFFFF', ink: '#0B0B0B', accent: '#FF9ACB', sbg: '#FF9ACB', sfg: '#0B0B0B' },
+  black: { bg: '#0B0B0B', ink: '#FFFFFF', accent: '#FF9ACB', sbg: '#FF9ACB', sfg: '#0B0B0B' },
+  pink: { bg: '#FF9ACB', ink: '#0B0B0B', accent: '#0B0B0B', sbg: '#0B0B0B', sfg: '#FF9ACB' },
+};
+// Trimestres alternam branco / preto (ritmo de leitura)
+const Q = [T.white, T.black, T.white, T.black];
+const tStyle = (t) => `--bg:${t.bg};--ink:${t.ink};--accent:${t.accent};--sbg:${t.sbg};--sfg:${t.sfg}`;
 
 const STATUS = { C: ['Confirmado', 'ok'], P: ['Previsto', 'pr'], A: ['A anunciar', 'an'] };
 const ROT = [-1.6, 1.1, -0.7, 1.5];
@@ -65,13 +68,12 @@ const dateRows = (list) =>
     .join('');
 
 const tipPanel = (tip, q, i) =>
-  `<div class="tip" style="--bg:${Q[q].bg};--ink:${Q[q].ink};--accent:${Q[q].accent};--sbg:${Q[q].sbg};--sfg:${Q[q].sfg}">
+  `<div class="tip" style="${tStyle(T.pink)}">
      ${stamp('Dica para o e-commerce', i)}
      <p style="font-size:${tip.length < 170 ? 32 : tip.length < 260 ? 27 : 23}pt">${md(tip)}</p>
    </div>`;
 
-const qStyle = (q) =>
-  `--bg:${Q[q].bg};--ink:${Q[q].ink};--accent:${Q[q].accent};--sbg:${Q[q].sbg};--sfg:${Q[q].sfg}`;
+const qStyle = (q) => tStyle(Q[q]);
 
 // ---------- páginas ----------
 const pages = [];
@@ -102,7 +104,7 @@ pages.push(`
 // APRESENTAÇÃO
 pageNo++;
 pages.push(`
-<section class="page intro" style="--bg:${CREAM};--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page intro" style="${tStyle(T.pink)}">
   <div class="band"><span>Calendário de moda 2027 · Calendário de moda 2027 · Calendário de moda 2027</span></div>
   <div class="inner">
     ${running('Apresentação')}
@@ -153,7 +155,7 @@ C.months.forEach((m, i) => {
     <div class="spacer"></div>
     ${collBlock}
   </div>
-  <div class="bottom" style="--bg:${CREAM};--ink:#0B0B0B;--sbg:${Q[q].bg};--sfg:${Q[q].ink === '#0B0B0B' && Q[q].bg !== '#0B0B0B' ? '#0B0B0B' : Q[q].sfg === '#0B0B0B' ? '#FF9ACB' : '#0B0B0B'}">
+  <div class="bottom" style="${qStyle(q)}">
     ${datesBlock}
     ${tipPanel(m.tip, q, 1)}
   </div>
@@ -176,9 +178,8 @@ C.months.forEach((m, i) => {
 
   // página 2
   pageNo++;
-  const stampVars = `--sbg:${Q[q].bg};--sfg:${Q[q].ink}`;
   pages.push(`
-<section class="page second" style="--bg:${CREAM};--ink:#0B0B0B;${stampVars}">
+<section class="page second" style="${qStyle(q)}">
   ${running(`${m.name} · continuação`)}
   <div class="sec">${stamp('Feiras e eventos', 1)}<div class="rows">${eventRows(m.fairs)}</div></div>
   ${hasWeeks ? `<div class="sec">${stamp('Datas comerciais', 3)}<div class="rows">${dateRows(m.dates)}</div></div>` : ''}
@@ -189,9 +190,8 @@ C.months.forEach((m, i) => {
 
 // PLANEJAMENTO DE COLEÇÕES
 pageNo++;
-const PQ = [0, 1, 2, 3];
 pages.push(`
-<section class="page plan" style="--bg:${CREAM};--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page plan" style="${tStyle(T.white)}">
   ${running('Planejamento de coleções')}
   <div class="stampwrap">${stamp('Planejamento de coleções', 0)}</div>
   <h2 class="h-mid">${esc(C.planning.title)}</h2>
@@ -200,7 +200,7 @@ pages.push(`
     <div class="ph"><span>Período</span><span>Movimento da indústria</span><span>O que planejar</span></div>
     ${C.planning.table
       .map(
-        (r, i) => `<div class="pr" style="--bg:${Q[PQ[i]].bg};--ink:${Q[PQ[i]].ink}">
+        (r, i) => `<div class="pr" style="${tStyle([T.pink, T.black, T.pink, T.black][i])}">
         <div class="pp">${esc(r[0])}</div><div class="pm">${esc(r[1])}</div><div class="pw">${esc(r[2])}</div></div>`
       )
       .join('')}
@@ -220,7 +220,7 @@ pages.push(`
 // CHECKLIST
 pageNo++;
 pages.push(`
-<section class="page check" style="--bg:${CREAM};--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page check" style="${tStyle(T.white)}">
   ${running('Checklist de planejamento trimestral')}
   <div class="stampwrap">${stamp('Checklist', 1)}</div>
   <h2 class="h-mid">${esc(C.checklist.title)}</h2>
@@ -228,7 +228,7 @@ pages.push(`
   <div class="grid">
     ${C.checklist.quarters
       .map(
-        ([t, p, items], i) => `<div class="qcard" style="${qStyle(i)}">
+        ([t, p, items], i) => `<div class="qcard" style="${tStyle([T.pink, T.black, T.black, T.pink][i])}">
         <div class="qh"><span class="qt">${esc(t)}</span><span class="qp">${esc(p)}</span></div>
         <ul>${items.map((it) => `<li><span class="box"></span><span>${esc(it)}</span></li>`).join('')}</ul>
       </div>`
@@ -242,7 +242,7 @@ pages.push(`
 // FECHAMENTO + CTA
 pageNo++;
 pages.push(`
-<section class="page cta">
+<section class="page cta" style="${tStyle(T.pink)}">
   ${running('Sizebay')}
   <div class="cluster">
     <span class="stamp big" style="--r:-2deg;left:0;top:0;z-index:1">Tamanho certo</span>
@@ -262,7 +262,7 @@ pages.push(`
 // CONTRACAPA
 pageNo++;
 pages.push(`
-<section class="page back">
+<section class="page back" style="${tStyle(T.black)}">
   <div class="stamps">
     <span class="stamp big" style="--r:-2deg">Moda</span>
     <span class="stamp big" style="--r:1.5deg">E-commerce</span>
@@ -302,7 +302,7 @@ a{color:inherit;text-decoration:none}
 /* linhas (eventos / datas) */
 .sec{margin-top:7mm}
 .sec>.stamp{margin-bottom:4mm;margin-left:1mm}
-.rows{border-top:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
+.rows{border-top:1.2mm solid #FF9ACB}
 .row{display:grid;grid-template-columns:36mm 1fr auto;align-items:center;gap:4mm;padding:2.3mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
 .row .d{font-family:'Anton',sans-serif;font-size:15pt;line-height:1;letter-spacing:.01em}
 .row .d.sm{font-family:'Instrument Sans';font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
@@ -314,7 +314,7 @@ a{color:inherit;text-decoration:none}
 .row.slim{grid-template-columns:36mm 1fr}
 .row.slim .n b{font-weight:500;font-size:10.5pt}
 .badge{font-size:6.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
-.badge.ok{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.badge.ok{background:#FF9ACB;color:#0B0B0B;border-color:#FF9ACB}
 .badge.an{border-style:dashed}
 
 /* hero de mês */
@@ -348,13 +348,13 @@ a{color:inherit;text-decoration:none}
 .single .top .mname{font-size:150pt}
 .single .top .ctit{font-size:26pt}
 .single .top .ctx{font-size:10.5pt}
-.single .bottom{flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
+.single .bottom{border-top:1.2mm solid #FF9ACB;flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
 .single .bottom .tip{margin-top:7mm;min-height:0}
 .single .bottom .tip .stamp{align-self:flex-start}
 .single .bottom .tip p{font-size:18pt !important}
 
 /* capa */
-.cover{background:#0B0B0B;color:#FFF1E6}
+.cover{background:#0B0B0B;color:#FFFFFF}
 .cover .cluster{position:relative;height:92mm;margin-top:10mm}
 .ctitle{font-weight:400;display:flex;flex-direction:column;line-height:.9}
 .ctitle .l1{font-family:'Instrument Serif',serif;font-size:104pt;letter-spacing:-.04em;margin-left:-1.5mm}
@@ -370,11 +370,11 @@ a{color:inherit;text-decoration:none}
 .intro{padding:0;flex-direction:row}
 .intro .inner{flex:1;padding:13mm 12mm 12mm 14mm;display:flex;flex-direction:column;position:relative}
 .intro .folio{left:14mm;right:12mm}
-.intro .band{width:42mm;background:#FF9ACB;color:#0B0B0B;overflow:hidden;position:relative;flex:none}
+.intro .band{width:42mm;background:#0B0B0B;color:#FF9ACB;overflow:hidden;position:relative;flex:none}
 .intro .band span{position:absolute;top:100%;left:0;white-space:nowrap;font-family:'Anton',sans-serif;font-size:36pt;text-transform:uppercase;letter-spacing:.01em;line-height:42mm;
   transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
 .h-big{font-family:'Instrument Serif',serif;font-weight:400;font-size:52pt;line-height:.98;letter-spacing:-.03em;margin-bottom:10mm}
-.h-big .script{font-size:60pt;color:#B0145F;letter-spacing:0}
+.h-big .script{font-size:60pt;color:#0B0B0B;letter-spacing:0}
 .intro .body p{font-size:11pt;line-height:1.55;margin-bottom:4.2mm;max-width:112mm}
 .intro .body p.lead{font-family:'Instrument Serif',serif;font-size:19pt;line-height:1.15;margin-bottom:5mm}
 
@@ -410,28 +410,27 @@ a{color:inherit;text-decoration:none}
 .closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:13pt;line-height:1.2;max-width:170mm}
 
 /* cta */
-.cta{background:#0B0B0B;color:#FFF1E6}
 .h-huge{font-family:'Instrument Serif',serif;font-weight:400;font-size:46pt;line-height:.98;letter-spacing:-.03em;margin-bottom:9mm}
-.h-huge .script{font-size:54pt;color:#FF9ACB;letter-spacing:0}
+.h-huge .script{font-size:54pt;color:#0B0B0B;letter-spacing:0}
 .cta .cluster{position:relative;height:66mm;margin-top:8mm}
-.cta .cluster .stamp{background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B}
+.cta .cluster .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB}
 .ctabody{columns:2;column-gap:8mm;margin-bottom:9mm}
 .ctabody p{font-size:10pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
-.ctabody strong{color:#FF9ACB}
-.kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#FF9ACB}
-.btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#FF9ACB;color:#0B0B0B;padding:3.4mm 8mm 3mm;border:.45mm dotted #0B0B0B;outline:.45mm solid #FF9ACB;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
+.ctabody strong{color:#0B0B0B;background:#FFFFFF;padding:0 1mm}
+.kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#0B0B0B}
+.btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#0B0B0B;color:#FF9ACB;padding:3.4mm 8mm 3mm;border:.45mm dotted #FF9ACB;outline:.45mm solid #0B0B0B;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
 
 /* contracapa */
-.back{background:#FF9ACB;color:#0B0B0B}
+.back{background:#0B0B0B;color:#FF9ACB}
 .back .stamps{position:relative;height:90mm;margin-top:6mm}
-.back .stamps .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB;position:absolute}
+.back .stamps .stamp{background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B;position:absolute}
 .back .stamps .stamp:nth-child(1){left:0;top:0}
 .back .stamps .stamp:nth-child(2){left:36mm;top:26mm;z-index:2}
 .back .stamps .stamp:nth-child(3){left:6mm;top:52mm;z-index:3}
 .brand{font-family:'Instrument Serif',serif;font-size:120pt;line-height:.9;letter-spacing:-.045em;margin-left:-2mm}
 .bt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20pt;line-height:1.1;margin:4mm 0 8mm;max-width:130mm}
 .links{display:flex;gap:4mm;align-items:center;font-size:9pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
-.links a{border-bottom:.35mm solid #0B0B0B}
+.links a{border-bottom:.35mm solid #FF9ACB}
 `;
 
 const html = `<!doctype html>

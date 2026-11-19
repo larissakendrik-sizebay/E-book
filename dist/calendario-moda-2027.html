@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 /* linhas (eventos / datas) */
 .sec{margin-top:7mm}
 .sec>.stamp{margin-bottom:4mm;margin-left:1mm}
-.rows{border-top:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
+.rows{border-top:1.2mm solid #FF9ACB}
 .row{display:grid;grid-template-columns:36mm 1fr auto;align-items:center;gap:4mm;padding:2.3mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
 .row .d{font-family:'Anton',sans-serif;font-size:15pt;line-height:1;letter-spacing:.01em}
 .row .d.sm{font-family:'Instrument Sans';font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
@@ -46,7 +46,7 @@ a{color:inherit;text-decoration:none}
 .row.slim{grid-template-columns:36mm 1fr}
 .row.slim .n b{font-weight:500;font-size:10.5pt}
 .badge{font-size:6.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
-.badge.ok{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.badge.ok{background:#FF9ACB;color:#0B0B0B;border-color:#FF9ACB}
 .badge.an{border-style:dashed}
 
 /* hero de mês */
@@ -80,13 +80,13 @@ a{color:inherit;text-decoration:none}
 .single .top .mname{font-size:150pt}
 .single .top .ctit{font-size:26pt}
 .single .top .ctx{font-size:10.5pt}
-.single .bottom{flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
+.single .bottom{border-top:1.2mm solid #FF9ACB;flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
 .single .bottom .tip{margin-top:7mm;min-height:0}
 .single .bottom .tip .stamp{align-self:flex-start}
 .single .bottom .tip p{font-size:18pt !important}
 
 /* capa */
-.cover{background:#0B0B0B;color:#FFF1E6}
+.cover{background:#0B0B0B;color:#FFFFFF}
 .cover .cluster{position:relative;height:92mm;margin-top:10mm}
 .ctitle{font-weight:400;display:flex;flex-direction:column;line-height:.9}
 .ctitle .l1{font-family:'Instrument Serif',serif;font-size:104pt;letter-spacing:-.04em;margin-left:-1.5mm}
@@ -102,11 +102,11 @@ a{color:inherit;text-decoration:none}
 .intro{padding:0;flex-direction:row}
 .intro .inner{flex:1;padding:13mm 12mm 12mm 14mm;display:flex;flex-direction:column;position:relative}
 .intro .folio{left:14mm;right:12mm}
-.intro .band{width:42mm;background:#FF9ACB;color:#0B0B0B;overflow:hidden;position:relative;flex:none}
+.intro .band{width:42mm;background:#0B0B0B;color:#FF9ACB;overflow:hidden;position:relative;flex:none}
 .intro .band span{position:absolute;top:100%;left:0;white-space:nowrap;font-family:'Anton',sans-serif;font-size:36pt;text-transform:uppercase;letter-spacing:.01em;line-height:42mm;
   transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
 .h-big{font-family:'Instrument Serif',serif;font-weight:400;font-size:52pt;line-height:.98;letter-spacing:-.03em;margin-bottom:10mm}
-.h-big .script{font-size:60pt;color:#B0145F;letter-spacing:0}
+.h-big .script{font-size:60pt;color:#0B0B0B;letter-spacing:0}
 .intro .body p{font-size:11pt;line-height:1.55;margin-bottom:4.2mm;max-width:112mm}
 .intro .body p.lead{font-family:'Instrument Serif',serif;font-size:19pt;line-height:1.15;margin-bottom:5mm}
 
@@ -142,28 +142,27 @@ a{color:inherit;text-decoration:none}
 .closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:13pt;line-height:1.2;max-width:170mm}
 
 /* cta */
-.cta{background:#0B0B0B;color:#FFF1E6}
 .h-huge{font-family:'Instrument Serif',serif;font-weight:400;font-size:46pt;line-height:.98;letter-spacing:-.03em;margin-bottom:9mm}
-.h-huge .script{font-size:54pt;color:#FF9ACB;letter-spacing:0}
+.h-huge .script{font-size:54pt;color:#0B0B0B;letter-spacing:0}
 .cta .cluster{position:relative;height:66mm;margin-top:8mm}
-.cta .cluster .stamp{background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B}
+.cta .cluster .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB}
 .ctabody{columns:2;column-gap:8mm;margin-bottom:9mm}
 .ctabody p{font-size:10pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
-.ctabody strong{color:#FF9ACB}
-.kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#FF9ACB}
-.btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#FF9ACB;color:#0B0B0B;padding:3.4mm 8mm 3mm;border:.45mm dotted #0B0B0B;outline:.45mm solid #FF9ACB;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
+.ctabody strong{color:#0B0B0B;background:#FFFFFF;padding:0 1mm}
+.kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#0B0B0B}
+.btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#0B0B0B;color:#FF9ACB;padding:3.4mm 8mm 3mm;border:.45mm dotted #FF9ACB;outline:.45mm solid #0B0B0B;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
 
 /* contracapa */
-.back{background:#FF9ACB;color:#0B0B0B}
+.back{background:#0B0B0B;color:#FF9ACB}
 .back .stamps{position:relative;height:90mm;margin-top:6mm}
-.back .stamps .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB;position:absolute}
+.back .stamps .stamp{background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B;position:absolute}
 .back .stamps .stamp:nth-child(1){left:0;top:0}
 .back .stamps .stamp:nth-child(2){left:36mm;top:26mm;z-index:2}
 .back .stamps .stamp:nth-child(3){left:6mm;top:52mm;z-index:3}
 .brand{font-family:'Instrument Serif',serif;font-size:120pt;line-height:.9;letter-spacing:-.045em;margin-left:-2mm}
 .bt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20pt;line-height:1.1;margin:4mm 0 8mm;max-width:130mm}
 .links{display:flex;gap:4mm;align-items:center;font-size:9pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
-.links a{border-bottom:.35mm solid #0B0B0B}
+.links a{border-bottom:.35mm solid #FF9ACB}
 </style></head>
 <body>
 <section class="page cover">
@@ -186,7 +185,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="page intro" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page intro" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
   <div class="band"><span>Calendário de moda 2027 · Calendário de moda 2027 · Calendário de moda 2027</span></div>
   <div class="inner">
     <header class="run"><span>Calendário de moda 2027</span><span>Apresentação</span></header>
@@ -199,7 +198,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="page hero" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>01 / 12</span></header>
   
     <div class="mhead">
@@ -233,7 +232,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>03</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Janeiro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">19–21/01</div>
@@ -269,14 +268,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://paris.premierevision.com/en/content/visit-practical-information">Confirmado</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">01/01</div><div class="n"><b>Confraternização Universal.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de verão.</b></div></div></div></div>
-  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">analise os produtos com maior saída, os tamanhos mais procurados e os itens com maior índice de troca. Esses dados ajudam a tomar decisões mais assertivas sobre reposição e planejamento de estoque.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>04</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>02 / 12</span></header>
   
     <div class="mhead">
@@ -310,7 +309,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>05</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Fevereiro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">15–18/02</div>
@@ -342,14 +341,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://www.projectfashionevents.com/events/project-las-vegas/about/">Confirmado</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>08 e 09/02 — Carnaval.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Campanhas de liquidação e transição de coleção.</b></div></div></div></div>
-  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:32pt">aproveite o interesse por novidades para apresentar combinações de produtos, montar vitrines temáticas e destacar peças que podem ser usadas em diferentes ocasiões.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>06</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>03 / 12</span></header>
   
     <div class="mhead">
@@ -379,7 +378,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>07</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Março · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">02–04/03</div>
@@ -395,14 +394,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge pr" href="https://www.knittingtradejournal.com/2026/10/29/filo-confirms-2027-dates-as-it-builds-international-buyer-links/">Previsto</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">15/03</div><div class="n"><b>Dia do Consumidor.</b></div></div><div class="row slim"><div class="d ">26/03</div><div class="n"><b>Sexta-feira Santa.</b></div></div><div class="row slim"><div class="d ">28/03</div><div class="n"><b>Páscoa.</b></div></div></div></div>
-  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">personalize a comunicação de acordo com o comportamento de compra. Recomendações de produtos, sugestões de looks e experiências mais personalizadas ajudam a tornar a jornada mais relevante.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>08</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>04 / 12</span></header>
   
     <div class="mhead">
@@ -424,7 +423,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>09</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF4F2B;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Abril · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">06–08/04</div>
@@ -448,14 +447,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Consolidação das coleções de Outono/Inverno no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Início da preparação para o Dia das Mães.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das coleções de Primavera/Verão 2027–2028.</b></div></div></div></div>
-  <div class="tip" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">desenvolva vitrines/banners com sugestões de presentes por estilo, categoria ou faixa de preço. Facilitar a escolha pode tornar a experiência de compra mais simples e aumentar as oportunidades de conversão.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>10</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>05 / 12</span></header>
   
     <div class="mhead">
@@ -477,7 +476,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>11</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF4F2B;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Maio · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d sm">No mês</div>
@@ -505,14 +504,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://globalfashionagenda.org/events/global-fashion-summit/">Confirmado</a>
       </div></div></div>
   
-  <div class="tip" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:32pt">organize categorias especiais de presentes e facilite a navegação com filtros, recomendações e informações claras sobre produtos e tamanhos.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>12</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>06 / 12</span></header>
   
     <div class="mhead">
@@ -538,7 +537,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>13</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF4F2B;--sfg:#0B0B0B">
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Junho · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">22–24/06</div>
@@ -562,14 +561,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://filati.pittimmagine.com/en">Confirmado</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">12/06</div><div class="n"><b>Dia dos Namorados.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Festas juninas.</b></div></div><div class="row slim"><div class="d ">21/06</div><div class="n"><b>Início do inverno no hemisfério sul.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Liquidações de meio de ano.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Apresentação de coleções masculinas Primavera/Verão 2028 nas semanas de moda internacionais.</b></div></div></div></div>
-  <div class="tip" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:32pt">crie combinações de produtos e sugestões de presentes para facilitar a escolha. Uma boa apresentação do mix também ajuda a estimular a compra de mais de um item.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>14</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>07 / 12</span></header>
   
     <div class="mhead">
@@ -595,7 +594,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>15</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#6B0F33;--sfg:#FFF1E6">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Julho · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">07 e 08/07</div>
@@ -611,14 +610,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge pr" href="https://kingpinsshow.com/show-dates/">Previsto</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de inverno.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Desenvolvimento e planejamento das coleções de Primavera/Verão.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Planejamento de campanhas para o Dia dos Pais.</b></div></div></div></div>
-  <div class="tip" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:32pt">acompanhe o desempenho dos produtos em promoção e identifique quais categorias e tamanhos precisam de reposição para a próxima coleção.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>16</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>08 / 12</span></header>
   
     <div class="mhead">
@@ -640,7 +639,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>17</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#6B0F33;--sfg:#FFF1E6">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Agosto · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">31/07–02/08</div>
@@ -652,14 +651,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">08/08</div><div class="n"><b>Dia dos Pais.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Entrada das coleções de Primavera/Verão no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das campanhas de Black Friday.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Preparação para os lançamentos do último trimestre.</b></div></div></div></div>
-  <div class="tip" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">explore sugestões de produtos por perfil e ocasião. Combinações de peças, kits e recomendações personalizadas podem facilitar a escolha e ampliar as possibilidades de compra.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>18</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>09 / 12</span></header>
   
     <div class="mhead">
@@ -693,7 +692,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>19</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#6B0F33;--sfg:#FFF1E6">
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Setembro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">21–23/09</div>
@@ -717,14 +716,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge an" href="https://thelondontextilefair.co.uk/">A anunciar</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">07/09</div><div class="n"><b>Independência do Brasil.</b></div></div><div class="row slim"><div class="d ">15/09</div><div class="n"><b>Dia do Cliente.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Início do aquecimento para o Dia das Crianças.</b></div></div></div></div>
-  <div class="tip" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">acompanhe as tendências e traduza as referências para a realidade da sua marca. Produza conteúdos que ajudem o consumidor a descobrir novidades, combinar peças e encontrar produtos que tenham a ver com seu estilo.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>20</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>10 / 12</span></header>
   
     <div class="mhead">
@@ -746,7 +745,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>21</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#0B0B0B;--sfg:#FFF1E6">
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Outubro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">05–07/10</div>
@@ -770,14 +769,14 @@ a{color:inherit;text-decoration:none}
         <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
       </div></div></div>
   
-  <div class="tip" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:32pt">revise o histórico de vendas, identifique os produtos com maior potencial e verifique se a grade de tamanhos está preparada para atender à demanda.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>22</span></footer>
 </section>
 
-<section class="page hero" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>11 / 12</span></header>
   
     <div class="mhead">
@@ -799,7 +798,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>23</span></footer>
 </section>
 
-<section class="page second" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#0B0B0B;--sfg:#FFF1E6">
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Novembro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d sm">No mês</div>
@@ -815,7 +814,7 @@ a{color:inherit;text-decoration:none}
         <a class="badge an" href="https://www.cnfw.com.br/cefw">A anunciar</a>
       </div></div></div>
   
-  <div class="tip" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">prepare sua operação para atender ao aumento de acessos e pedidos. Garanta informações claras sobre produtos, tamanhos, prazos e condições de troca. <strong>Uma experiência de compra mais segura ajuda a reduzir dúvidas e obstáculos na conversão.</strong></p>
    </div>
@@ -823,7 +822,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section class="page single">
-  <div class="top hero" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="top hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
     <header class="run"><span>Calendário de moda 2027</span><span>12 / 12</span></header>
     
     <div class="mhead">
@@ -838,13 +837,13 @@ a{color:inherit;text-decoration:none}
       <p class="ctx">É um período interessante para trabalhar lançamentos especiais, peças para festas e produtos voltados às férias e viagens.</p>
     </div>
   </div>
-  <div class="bottom" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <div class="bottom" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
     
     <div class="sec">
       <span class="stamp" style="--r:1.5deg">Datas comerciais</span>
       <div class="rows"><div class="row slim"><div class="d ">21/12</div><div class="n"><b>Início do verão no hemisfério sul.</b></div></div><div class="row slim"><div class="d ">24/12</div><div class="n"><b>Véspera de Natal.</b></div></div><div class="row slim"><div class="d ">25/12</div><div class="n"><b>Natal.</b></div></div><div class="row slim"><div class="d ">26/12</div><div class="n"><b>Boxing Day.</b></div></div><div class="row slim"><div class="d ">31/12</div><div class="n"><b>Réveillon.</b></div></div></div>
     </div>
-    <div class="tip" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+    <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
      <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
      <p style="font-size:27pt">facilite a escolha de presentes com vitrines especiais, sugestões de produtos e informações claras sobre entrega. Aproveite também para analisar os resultados do ano e começar o planejamento de 2028.</p>
    </div>
@@ -852,17 +851,17 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>25</span></footer>
 </section>
 
-<section class="page plan" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page plan" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Planejamento de coleções</span></header>
   <div class="stampwrap"><span class="stamp" style="--r:-1.6deg">Planejamento de coleções</span></div>
   <h2 class="h-mid">O calendário da moda não acompanha apenas as estações.</h2>
   <div class="two"><p>Na indústria fashion, o planejamento de uma coleção começa muito antes de ela chegar ao consumidor. Pesquisa, desenvolvimento, sourcing, produção, apresentação e comercialização fazem parte de um ciclo que exige organização e antecedência.</p><p>Para ajudar você a visualizar esse movimento, reunimos algumas das principais janelas de planejamento de coleções em 2027.</p></div>
   <div class="ptable">
     <div class="ph"><span>Período</span><span>Movimento da indústria</span><span>O que planejar</span></div>
-    <div class="pr" style="--bg:#FF9ACB;--ink:#0B0B0B">
-        <div class="pp">Janeiro a março</div><div class="pm">Apresentações de Outono/Inverno 2027/2028</div><div class="pw">Pesquisa de tendências, compras e desenvolvimento</div></div><div class="pr" style="--bg:#FF4F2B;--ink:#0B0B0B">
-        <div class="pp">Março a junho</div><div class="pm">Comercialização de Outono/Inverno 2027</div><div class="pw">Lançamentos, campanhas e reposição</div></div><div class="pr" style="--bg:#6B0F33;--ink:#FFF1E6">
-        <div class="pp">Junho a setembro</div><div class="pm">Apresentações de Primavera/Verão 2028</div><div class="pw">Sourcing, desenvolvimento e planejamento de compras</div></div><div class="pr" style="--bg:#0B0B0B;--ink:#FFF1E6">
+    <div class="pr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="pp">Janeiro a março</div><div class="pm">Apresentações de Outono/Inverno 2027/2028</div><div class="pw">Pesquisa de tendências, compras e desenvolvimento</div></div><div class="pr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="pp">Março a junho</div><div class="pm">Comercialização de Outono/Inverno 2027</div><div class="pw">Lançamentos, campanhas e reposição</div></div><div class="pr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="pp">Junho a setembro</div><div class="pm">Apresentações de Primavera/Verão 2028</div><div class="pw">Sourcing, desenvolvimento e planejamento de compras</div></div><div class="pr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
         <div class="pp">Agosto a dezembro</div><div class="pm">Comercialização de Primavera/Verão 2027/2028</div><div class="pw">Lançamentos, vitrines e campanhas sazonais</div></div>
   </div>
   <div class="special">
@@ -877,22 +876,22 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>26</span></footer>
 </section>
 
-<section class="page check" style="--bg:#F4EFE6;--ink:#0B0B0B;--sbg:#FF9ACB;--sfg:#0B0B0B">
+<section class="page check" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Checklist de planejamento trimestral</span></header>
   <div class="stampwrap"><span class="stamp" style="--r:1.1deg">Checklist</span></div>
   <h2 class="h-mid">Seu negócio está preparado para o próximo trimestre?</h2>
   <p class="cintro">Use este checklist para revisar os principais pontos do planejamento da sua operação.</p>
   <div class="grid">
-    <div class="qcard" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#6B0F33;--sbg:#0B0B0B;--sfg:#FF9ACB">
+    <div class="qcard" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
         <div class="qh"><span class="qt">1º trimestre</span><span class="qp">Janeiro a março</span></div>
         <ul><li><span class="box"></span><span>Analisar os resultados do ano anterior.</span></li><li><span class="box"></span><span>Revisar o estoque e planejar as liquidações de verão.</span></li><li><span class="box"></span><span>Mapear tendências e referências para novas coleções.</span></li><li><span class="box"></span><span>Planejar compras e reposições.</span></li><li><span class="box"></span><span>Organizar as campanhas de Carnaval, Dia do Consumidor e Páscoa.</span></li></ul>
-      </div><div class="qcard" style="--bg:#FF4F2B;--ink:#0B0B0B;--accent:#FFF1E6;--sbg:#FF9ACB;--sfg:#0B0B0B">
+      </div><div class="qcard" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
         <div class="qh"><span class="qt">2º trimestre</span><span class="qp">Abril a junho</span></div>
         <ul><li><span class="box"></span><span>Preparar o lançamento e a divulgação das coleções de inverno.</span></li><li><span class="box"></span><span>Planejar campanhas de Dia das Mães e Dia dos Namorados.</span></li><li><span class="box"></span><span>Revisar o desempenho dos produtos e tamanhos.</span></li><li><span class="box"></span><span>Organizar o planejamento de compras para Primavera/Verão.</span></li><li><span class="box"></span><span>Avaliar oportunidades de lançamentos especiais.</span></li></ul>
-      </div><div class="qcard" style="--bg:#6B0F33;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+      </div><div class="qcard" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
         <div class="qh"><span class="qt">3º trimestre</span><span class="qp">Julho a setembro</span></div>
         <ul><li><span class="box"></span><span>Planejar liquidações e renovação de estoque.</span></li><li><span class="box"></span><span>Preparar lançamentos de Primavera/Verão.</span></li><li><span class="box"></span><span>Atualizar vitrines e conteúdos da loja.</span></li><li><span class="box"></span><span>Planejar campanhas de Dia dos Pais e Dia do Cliente.</span></li><li><span class="box"></span><span>Começar o planejamento de Black Friday.</span></li></ul>
-      </div><div class="qcard" style="--bg:#0B0B0B;--ink:#FFF1E6;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+      </div><div class="qcard" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
         <div class="qh"><span class="qt">4º trimestre</span><span class="qp">Outubro a dezembro</span></div>
         <ul><li><span class="box"></span><span>Revisar estoque e disponibilidade de tamanhos.</span></li><li><span class="box"></span><span>Organizar campanhas de Dia das Crianças e Black Friday.</span></li><li><span class="box"></span><span>Preparar a operação para o aumento de pedidos.</span></li><li><span class="box"></span><span>Planejar Natal, Réveillon e coleções cápsula.</span></li><li><span class="box"></span><span>Analisar os resultados do ano e começar o planejamento de 2028.</span></li></ul>
       </div>
@@ -901,7 +900,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>27</span></footer>
 </section>
 
-<section class="page cta">
+<section class="page cta" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
   <header class="run"><span>Calendário de moda 2027</span><span>Sizebay</span></header>
   <div class="cluster">
     <span class="stamp big" style="--r:-2deg;left:0;top:0;z-index:1">Tamanho certo</span>
@@ -918,7 +917,7 @@ a{color:inherit;text-decoration:none}
   <footer class="folio"><span>Sizebay</span><span>28</span></footer>
 </section>
 
-<section class="page back">
+<section class="page back" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <div class="stamps">
     <span class="stamp big" style="--r:-2deg">Moda</span>
     <span class="stamp big" style="--r:1.5deg">E-commerce</span>
