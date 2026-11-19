@@ -22,30 +22,30 @@ a{color:inherit;text-decoration:none}
 .script{font-family:'Pinyon Script',cursive;font-weight:400;letter-spacing:0}
 
 /* topo / rodapé */
-.run{display:flex;justify-content:space-between;font-size:7.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6mm}
-.folio{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:7pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.run{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6mm}
+.folio{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
 
 /* carimbo (tag rosa com borda pontilhada) */
-.stamp{display:inline-block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:14pt;line-height:1;letter-spacing:.01em;
+.stamp{display:inline-block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15pt;line-height:1;letter-spacing:.01em;
   padding:1.6mm 4mm 1.4mm;background:var(--sbg);color:var(--sfg);border:.45mm dotted var(--sfg);transform:rotate(var(--r,-1.5deg));transform-origin:left center;position:relative}
 .stamp.big{font-size:50pt;padding:2mm 5mm 1.6mm;letter-spacing:-.015em;position:absolute;white-space:nowrap;background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B}
 .stampwrap{margin-bottom:4mm;padding-left:1mm}
 
 /* linhas (eventos / datas) */
-.sec{margin-top:7mm}
-.sec>.stamp{margin-bottom:4mm;margin-left:1mm}
+.sec{margin-top:5.5mm}
+.sec>.stamp{margin-bottom:3mm;margin-left:1mm}
 .rows{border-top:1.2mm solid #FF9ACB}
-.row{display:grid;grid-template-columns:36mm 1fr auto;align-items:center;gap:4mm;padding:2.3mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
-.row .d{font-family:'Anton',sans-serif;font-size:15pt;line-height:1;letter-spacing:.01em}
-.row .d.sm{font-family:'Instrument Sans';font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.row{display:grid;grid-template-columns:34mm 1fr auto;align-items:center;gap:3mm;padding:1.9mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
+.row .d{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;letter-spacing:.01em}
+.row .d.sm{font-family:'Instrument Sans';font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .row .d.dot span{display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;background:currentColor}
-.row .n{display:flex;flex-direction:column;gap:.4mm}
-.row .n b{font-weight:600;font-size:10.5pt;line-height:1.2}
-.row .n i{font-family:'Instrument Serif',serif;font-size:11pt;line-height:1.1;opacity:.85}
+.row .n{display:block}
+.row .n b{font-weight:600;font-size:14pt;line-height:1.2}
+.row .n i{white-space:nowrap;font-family:'Instrument Serif',serif;font-size:14pt;line-height:1.2;opacity:.85}
 .row.slim{padding:1.9mm 0}
-.row.slim{grid-template-columns:36mm 1fr}
-.row.slim .n b{font-weight:500;font-size:10.5pt}
-.badge{font-size:6.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
+.row.slim{grid-template-columns:34mm 1fr}
+.row.slim .n b{font-weight:500;font-size:14pt}
+.badge{font-size:8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
 .badge.ok{background:#FF9ACB;color:#0B0B0B;border-color:#FF9ACB}
 .badge.an{border-style:dashed}
 
@@ -56,34 +56,16 @@ a{color:inherit;text-decoration:none}
 .yr{font-size:40pt;line-height:.9;color:var(--accent);transform:rotate(-5deg);display:inline-block;margin-bottom:-1mm}
 .mname{font-family:'Instrument Serif',serif;font-weight:400;font-size:158pt;line-height:.9;letter-spacing:-.04em;margin-left:-2mm}
 .coll{margin-top:0}
-.page.hero>.sec .row{padding:3.6mm 0}
-.page.hero>.sec .row .d{font-size:19pt}
-.page.hero>.sec .row .d.sm{font-size:8pt}
-.page.hero>.sec .row .n b{font-size:12.5pt}
-.page.hero>.sec .row .n i{font-size:13pt}
-.page.hero>.sec .row.slim{padding:3.2mm 0}
-.page.hero>.sec .row.slim .n b{font-size:12pt}
-.page.hero .badge{font-size:7pt;padding:1.2mm 3mm}
-.ctit{font-family:'Instrument Serif',serif;font-style:italic;font-size:36pt;line-height:1;letter-spacing:-.02em;margin-bottom:4mm;max-width:175mm}
-.ctx{font-size:11.5pt;line-height:1.5;max-width:150mm;font-weight:500}
+.ctit{font-family:'Instrument Serif',serif;font-style:italic;font-size:42pt;line-height:1;letter-spacing:-.02em;margin-bottom:5mm;max-width:175mm}
+.ctx{font-size:15pt;line-height:1.45;max-width:165mm;font-weight:500}
 
 /* painel da dica */
 .tip{background:var(--bg);color:var(--ink);padding:9mm 10mm;margin-top:8mm;flex:1;display:flex;flex-direction:column;justify-content:center;gap:6mm;min-height:52mm}
 .tip .stamp{align-self:flex-start}
-.tip p{font-family:'Instrument Serif',serif;font-size:21pt;line-height:1.14;letter-spacing:-.005em}
+.tip p{font-family:'Instrument Serif',serif;font-size:26pt;line-height:1.14;letter-spacing:-.005em}
 .tip strong{font-weight:400;font-style:italic;color:var(--accent);background:none}
 .second .tip{margin-bottom:6mm}
 
-/* dezembro (página única) */
-.single{padding:0}
-.single .top{padding:13mm 14mm 9mm;height:150mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
-.single .top .mname{font-size:150pt}
-.single .top .ctit{font-size:26pt}
-.single .top .ctx{font-size:10.5pt}
-.single .bottom{border-top:1.2mm solid #FF9ACB;flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
-.single .bottom .tip{margin-top:7mm;min-height:0}
-.single .bottom .tip .stamp{align-self:flex-start}
-.single .bottom .tip p{font-size:18pt !important}
 
 /* capa */
 .cover{background:#0B0B0B;color:#FFFFFF}
@@ -95,8 +77,8 @@ a{color:inherit;text-decoration:none}
 .ctitle .l2 .script{font-size:150pt;color:#FF9ACB;line-height:.78;margin-left:2mm}
 .ctitle .l3{font-family:'Anton',sans-serif;font-size:98pt;color:#FF9ACB;letter-spacing:.01em;line-height:.9;align-self:flex-end;margin-top:-14mm;margin-right:0}
 .cbottom{margin-top:10mm;border-top:.3mm solid rgba(255,241,230,.4);padding-top:6mm;display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;padding-bottom:6mm}
-.csub{font-family:'Instrument Serif',serif;font-size:17pt;line-height:1.1}
-.ctext{font-size:9.5pt;line-height:1.5;opacity:.85}
+.csub{font-family:'Instrument Serif',serif;font-size:20pt;line-height:1.1}
+.ctext{font-size:13pt;line-height:1.5;opacity:.85}
 
 /* apresentação */
 .intro{padding:0;flex-direction:row}
@@ -107,39 +89,41 @@ a{color:inherit;text-decoration:none}
   transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
 .h-big{font-family:'Instrument Serif',serif;font-weight:400;font-size:52pt;line-height:.98;letter-spacing:-.03em;margin-bottom:10mm}
 .h-big .script{font-size:60pt;color:#0B0B0B;letter-spacing:0}
-.intro .body p{font-size:11pt;line-height:1.55;margin-bottom:4.2mm;max-width:112mm}
-.intro .body p.lead{font-family:'Instrument Serif',serif;font-size:19pt;line-height:1.15;margin-bottom:5mm}
+.intro .body p{font-size:14pt;line-height:1.5;margin-bottom:4.5mm;max-width:122mm}
+.intro .body p.lead{font-family:'Instrument Serif',serif;font-size:21pt;line-height:1.15;margin-bottom:5mm}
 
 /* planejamento */
-.h-mid{font-family:'Instrument Serif',serif;font-weight:400;font-size:30pt;line-height:1;letter-spacing:-.025em;margin-bottom:4mm;max-width:165mm}
-.plan .two{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-bottom:5mm}
-.plan .two p{font-size:9.5pt;line-height:1.45}
-.ptable .ph,.ptable .pr{display:grid;grid-template-columns:42mm 62mm 1fr;gap:5mm;align-items:center}
-.ptable .ph{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 5mm 2mm}
-.ptable .pr{background:var(--bg);color:var(--ink);padding:2.8mm 5mm;margin-bottom:1.2mm}
+.h-mid{font-family:'Instrument Serif',serif;font-weight:400;font-size:27pt;line-height:1;letter-spacing:-.025em;margin-bottom:3.5mm;max-width:180mm}
+.plan .two{margin-bottom:4mm}
+.plan .two p{margin-bottom:2mm}
+.plan .two p{font-size:13pt;line-height:1.45}
+.ptable .ph,.ptable .pr{display:grid;grid-template-columns:36mm 54mm 1fr;gap:4mm;align-items:center}
+.ptable .ph{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 5mm 2mm}
+.ptable .pr{background:var(--bg);color:var(--ink);padding:2.2mm 5mm;margin-bottom:1mm}
 .pp{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;text-transform:uppercase}
-.pm{font-family:'Instrument Serif',serif;font-size:14.5pt;line-height:1.08}
-.pw{font-size:9.5pt;line-height:1.35;font-weight:500}
-.special{margin-top:5mm;display:grid;grid-template-columns:62mm 1fr;gap:8mm}
-.special h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:26pt;line-height:1;margin-bottom:3mm}
-.special .sphead p{font-size:9.5pt;line-height:1.45}
+.pm{font-family:'Instrument Serif',serif;font-size:16pt;line-height:1.08}
+.pw{font-size:13pt;line-height:1.35;font-weight:500}
+.special{margin-top:5mm;display:block}
+.special h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:26pt;line-height:1;margin-bottom:1.5mm}
+.special .sphead{margin-bottom:2.5mm}
+.special .sphead p{font-size:13pt;line-height:1.45}
 .special ul{list-style:none;border-top:.3mm solid rgba(11,11,11,.35)}
-.special li{display:grid;grid-template-columns:34mm 1fr;gap:3mm;padding:1.6mm 0;border-bottom:.3mm solid rgba(11,11,11,.35);font-size:9.5pt;line-height:1.35}
-.special li b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:11pt;letter-spacing:.02em}
-.note{background:#FF9ACB;padding:4.5mm 7mm;font-family:'Instrument Serif',serif;font-size:14pt;line-height:1.18;margin-top:5mm}
-.note b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:11pt;letter-spacing:.03em;margin-right:1mm}
+.special li{display:grid;grid-template-columns:42mm 1fr;gap:3mm;padding:1.3mm 0;border-bottom:.3mm solid rgba(11,11,11,.35);font-size:13pt;line-height:1.3}
+.special li b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.02em}
+.note{background:#FF9ACB;padding:3.5mm 6mm;font-family:'Instrument Serif',serif;font-size:15pt;line-height:1.16;margin-top:4mm}
+.note b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.03em;margin-right:1mm}
 
 /* checklist */
-.cintro{font-size:10pt;margin-bottom:4mm;max-width:150mm}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;flex:1;margin-bottom:4mm}
-.qcard{background:var(--bg);color:var(--ink);padding:5.5mm 6mm 4.5mm;display:flex;flex-direction:column}
-.qh{margin-bottom:3.5mm;display:flex;flex-direction:column;gap:1mm}
+.cintro{font-size:13pt;margin-bottom:3mm;max-width:175mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;flex:1;margin-bottom:3mm}
+.qcard{background:var(--bg);color:var(--ink);padding:4.5mm 5mm 4mm;display:flex;flex-direction:column}
+.qh{margin-bottom:2.5mm;display:flex;flex-direction:column;gap:1mm}
 .qt{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:21pt;line-height:1}
 .qp{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;color:var(--accent)}
-.qcard ul{list-style:none;display:flex;flex-direction:column;gap:2.2mm}
-.qcard li{display:flex;gap:3mm;font-size:9.5pt;line-height:1.35;font-weight:500}
+.qcard ul{list-style:none;display:flex;flex-direction:column;gap:1.7mm}
+.qcard li{display:flex;gap:3mm;font-size:13pt;line-height:1.28;font-weight:500}
 .qcard .box{flex:none;width:4mm;height:4mm;border:.45mm solid currentColor;margin-top:.3mm}
-.closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:13pt;line-height:1.2;max-width:170mm}
+.closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;line-height:1.15;max-width:180mm}
 
 /* cta */
 .h-huge{font-family:'Instrument Serif',serif;font-weight:400;font-size:46pt;line-height:.98;letter-spacing:-.03em;margin-bottom:9mm}
@@ -147,7 +131,7 @@ a{color:inherit;text-decoration:none}
 .cta .cluster{position:relative;height:66mm;margin-top:8mm}
 .cta .cluster .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB}
 .ctabody{columns:2;column-gap:8mm;margin-bottom:9mm}
-.ctabody p{font-size:10pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
+.ctabody p{font-size:13pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
 .ctabody strong{color:#0B0B0B;background:#FFFFFF;padding:0 1mm}
 .kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#0B0B0B}
 .btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#0B0B0B;color:#FF9ACB;padding:3.4mm 8mm 3mm;border:.45mm dotted #FF9ACB;outline:.45mm solid #0B0B0B;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
@@ -161,7 +145,7 @@ a{color:inherit;text-decoration:none}
 .back .stamps .stamp:nth-child(3){left:6mm;top:52mm;z-index:3}
 .brand{font-family:'Instrument Serif',serif;font-size:120pt;line-height:.9;letter-spacing:-.045em;margin-left:-2mm}
 .bt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20pt;line-height:1.1;margin:4mm 0 8mm;max-width:130mm}
-.links{display:flex;gap:4mm;align-items:center;font-size:9pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
+.links{display:flex;gap:4mm;align-items:center;font-size:10pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
 .links a{border-bottom:.35mm solid #FF9ACB}
 @media screen{.page{margin:0 !important}} body{background:#fff;margin:0}</style></head>
 <body>
@@ -200,507 +184,466 @@ a{color:inherit;text-decoration:none}
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>01 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">01</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Janeiro</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">01</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:92pt">Janeiro</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">15–19/01</div>
-        <div class="n"><b>Milan Fashion Week Masculina</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Milan Fashion Week Masculina ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://danaogroup.net/milan-mens-fashion-week-aw-2027-tickets/">Confirmado</a>
       </div><div class="row">
         <div class="d ">19–24/01</div>
-        <div class="n"><b>Paris Fashion Week Masculina</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Paris Fashion Week Masculina ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://hotelrdeparis.com/pt/noticias/paris-fashion-week-janeiro-2027-homem-e-alta-costura-o-seu-quartel-general-no-9/">Confirmado</a>
       </div><div class="row">
         <div class="d ">25–28/01</div>
-        <div class="n"><b>Paris Haute Couture Week</b><i>Primavera/Verão 2027</i></div>
+        <div class="n"><b>Paris Haute Couture Week ·</b> <i>Primavera/Verão 2027</i></div>
         <a class="badge ok" href="https://mahospitalityclub.com/redcarpet/paris-haute-couture-week-2027/">Confirmado</a>
       </div><div class="row">
         <div class="d ">29/01–01/02</div>
-        <div class="n"><b>Berlin Fashion Week</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Berlin Fashion Week ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://littlebighotels.com/en/events/berlin-fashion-week-2027/">Confirmado</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Outono/Inverno 2027/2028</p>
-      <p class="ctx">As apresentações internacionais de moda masculina e alta-costura ajudam a antecipar referências criativas e movimentos da indústria para as próximas temporadas.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">19–21/01</div>
+        <div class="n"><b>Calcemoda 2027 ·</b> <i>Curitiba, PR, Brasil</i></div>
+        <a class="badge ok" href="https://calcemoda.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">26 e 27/01</div>
+        <div class="n"><b>Inspiramais 2027 ·</b> <i>Porto Alegre, RS, Brasil</i></div>
+        <a class="badge ok" href="https://inspiramais.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">12–15/01</div>
+        <div class="n"><b>Pitti Uomo ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://uomo.pittimmagine.com/en">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">20–21/01</div>
+        <div class="n"><b>Pitti Bimbo ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://bimbo.pittimmagine.com/en">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">20–22/01</div>
+        <div class="n"><b>Pitti Filati ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://filati.pittimmagine.com/en">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">20–22/01</div>
+        <div class="n"><b>Munich Fabric Start ·</b> <i>Munique, Alemanha</i></div>
+        <a class="badge ok" href="https://www.munichfabricstart.com/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">25–27/01</div>
+        <div class="n"><b>Texworld Apparel Sourcing Paris ·</b> <i>Paris, França</i></div>
+        <a class="badge ok" href="https://texworld-paris.fr.messefrankfurt.com/paris/en.html">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">26–28/01</div>
+        <div class="n"><b>Première Vision Paris ·</b> <i>Paris, França</i></div>
+        <a class="badge ok" href="https://paris.premierevision.com/en/content/visit-practical-information">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">01/01</div><div class="n"><b>Confraternização Universal.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de verão.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>03</span></footer>
 </section>
 
 <section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Janeiro · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">19–21/01</div>
-        <div class="n"><b>Calcemoda 2027</b><i>Curitiba, PR, Brasil</i></div>
-        <a class="badge ok" href="https://calcemoda.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">26 e 27/01</div>
-        <div class="n"><b>Inspiramais 2027</b><i>Porto Alegre, RS, Brasil</i></div>
-        <a class="badge ok" href="https://inspiramais.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">12–15/01</div>
-        <div class="n"><b>Pitti Uomo</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://uomo.pittimmagine.com/en">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">20–21/01</div>
-        <div class="n"><b>Pitti Bimbo</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://bimbo.pittimmagine.com/en">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">20–22/01</div>
-        <div class="n"><b>Pitti Filati</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://filati.pittimmagine.com/en">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">20–22/01</div>
-        <div class="n"><b>Munich Fabric Start</b><i>Munique, Alemanha</i></div>
-        <a class="badge ok" href="https://www.munichfabricstart.com/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">25–27/01</div>
-        <div class="n"><b>Texworld Apparel Sourcing Paris</b><i>Paris, França</i></div>
-        <a class="badge ok" href="https://texworld-paris.fr.messefrankfurt.com/paris/en.html">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">26–28/01</div>
-        <div class="n"><b>Première Vision Paris</b><i>Paris, França</i></div>
-        <a class="badge ok" href="https://paris.premierevision.com/en/content/visit-practical-information">Confirmado</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">01/01</div><div class="n"><b>Confraternização Universal.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de verão.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Outono/Inverno 2027/2028</p>
+    <p class="ctx">As apresentações internacionais de moda masculina e alta-costura ajudam a antecipar referências criativas e movimentos da indústria para as próximas temporadas.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">analise os produtos com maior saída, os tamanhos mais procurados e os itens com maior índice de troca. Esses dados ajudam a tomar decisões mais assertivas sobre reposição e planejamento de estoque.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>analise os produtos com maior saída, os tamanhos mais procurados e os itens com maior índice de troca. Esses dados ajudam a tomar decisões mais assertivas sobre reposição e planejamento de estoque.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>04</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>02 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">02</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Fevereiro</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">02</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:92pt">Fevereiro</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">01–05/02</div>
-        <div class="n"><b>Copenhagen Fashion Week</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Copenhagen Fashion Week ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://copenhagenfashionweek.com/">Confirmado</a>
       </div><div class="row">
         <div class="d ">10–16/02</div>
-        <div class="n"><b>New York Fashion Week</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>New York Fashion Week ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://fashioncalendar.com/">Confirmado</a>
       </div><div class="row">
         <div class="d ">18–22/02</div>
-        <div class="n"><b>London Fashion Week</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>London Fashion Week ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge pr" href="https://britishfashioncouncil.co.uk/Global-Platforms/LFW-Designer-Applications">Previsto</a>
       </div><div class="row">
         <div class="d ">23/02–01/03</div>
-        <div class="n"><b>Milan Fashion Week Feminina</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Milan Fashion Week Feminina ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://www.cameramoda.it/en/milano-moda-donna/calendar/">Confirmado</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Outono/Inverno 2027/2028</p>
-      <p class="ctx">As apresentações de fevereiro trazem referências para o desenvolvimento de coleções e ajudam compradores e marcas a acompanhar os movimentos da moda internacional.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">15–18/02</div>
+        <div class="n"><b>Feninjer+ ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge ok" href="https://feninjer.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">16–18/02</div>
+        <div class="n"><b>APACACE – Feira de Calçados e Acessórios ·</b> <i>Fortaleza, CE, Brasil</i></div>
+        <a class="badge pr" href="https://www.instagram.com/apacace/">Previsto</a>
+      </div><div class="row">
+        <div class="d ">17 e 18/02</div>
+        <div class="n"><b>Tecnomoda 2027 ·</b> <i>Ribeirão Preto, SP, Brasil</i></div>
+        <a class="badge ok" href="https://feiratecnomoda.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">21–23/02</div>
+        <div class="n"><b>Feira Moda Nordeste ·</b> <i>Caruaru, PE, Brasil</i></div>
+        <a class="badge pr" href="https://www.instagram.com/reels/DbB7TM3xFZN/">Previsto</a>
+      </div><div class="row">
+        <div class="d ">02–04/02</div>
+        <div class="n"><b>CIFF Copenhagen ·</b> <i>Copenhague, Dinamarca</i></div>
+        <a class="badge ok" href="https://ciff.dk/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">07–10/02</div>
+        <div class="n"><b>Pure London ·</b> <i>Birmingham, Reino Unido</i></div>
+        <a class="badge ok" href="http://neventum.com/tradeshows/pure-london">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">16–18/02</div>
+        <div class="n"><b>PROJECT Las Vegas ·</b> <i>Las Vegas, Estados Unidos</i></div>
+        <a class="badge ok" href="https://www.projectfashionevents.com/events/project-las-vegas/about/">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">08 e 09/02</div><div class="n"><b>Carnaval.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Campanhas de liquidação e transição de coleção.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>05</span></footer>
 </section>
 
 <section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Fevereiro · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">15–18/02</div>
-        <div class="n"><b>Feninjer+</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge ok" href="https://feninjer.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">16–18/02</div>
-        <div class="n"><b>APACACE – Feira de Calçados e Acessórios</b><i>Fortaleza, CE, Brasil</i></div>
-        <a class="badge pr" href="https://www.instagram.com/apacace/">Previsto</a>
-      </div><div class="row">
-        <div class="d ">17 e 18/02</div>
-        <div class="n"><b>Tecnomoda 2027</b><i>Ribeirão Preto, SP, Brasil</i></div>
-        <a class="badge ok" href="https://feiratecnomoda.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">21–23/02</div>
-        <div class="n"><b>Feira Moda Nordeste</b><i>Caruaru, PE, Brasil</i></div>
-        <a class="badge pr" href="https://www.instagram.com/reels/DbB7TM3xFZN/">Previsto</a>
-      </div><div class="row">
-        <div class="d ">02–04/02</div>
-        <div class="n"><b>CIFF Copenhagen</b><i>Copenhague, Dinamarca</i></div>
-        <a class="badge ok" href="https://ciff.dk/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">07–10/02</div>
-        <div class="n"><b>Pure London</b><i>Birmingham, Reino Unido</i></div>
-        <a class="badge ok" href="http://neventum.com/tradeshows/pure-london">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">16–18/02</div>
-        <div class="n"><b>PROJECT Las Vegas</b><i>Las Vegas, Estados Unidos</i></div>
-        <a class="badge ok" href="https://www.projectfashionevents.com/events/project-las-vegas/about/">Confirmado</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>08 e 09/02 — Carnaval.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Campanhas de liquidação e transição de coleção.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Outono/Inverno 2027/2028</p>
+    <p class="ctx">As apresentações de fevereiro trazem referências para o desenvolvimento de coleções e ajudam compradores e marcas a acompanhar os movimentos da moda internacional.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:32pt">aproveite o interesse por novidades para apresentar combinações de produtos, montar vitrines temáticas e destacar peças que podem ser usadas em diferentes ocasiões.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>aproveite o interesse por novidades para apresentar combinações de produtos, montar vitrines temáticas e destacar peças que podem ser usadas em diferentes ocasiões.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>06</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>03 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">03</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Março</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">03</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">Março</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">01–09/03</div>
-        <div class="n"><b>Paris Fashion Week Feminina</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Paris Fashion Week Feminina ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
       </div><div class="row">
         <div class="d ">15–20/03</div>
-        <div class="n"><b>Rakuten Fashion Week Tokyo</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Rakuten Fashion Week Tokyo ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge pr" href="https://rakutenfashionweektokyo.com/en/">Previsto</a>
       </div><div class="row">
         <div class="d sm">No mês</div>
         <div class="n"><b>Seoul Fashion Week</b></div>
         <a class="badge an" href="https://www.seoulfashionweek.org/enpg/fawk/abou/contPageDetail.do?conts_no=9D38288A08C411EEA73700224D6749B7">A anunciar</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Desenvolvimento e planejamento de Outono/Inverno 2027.</p>
-      <p class="ctx">As referências apresentadas nas semanas de moda podem ajudar marcas a identificar cores, modelagens, materiais e propostas que influenciarão as próximas temporadas.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">02–04/03</div>
+        <div class="n"><b>Expo Shoes 2027 ·</b> <i>Campina Grande, PB, Brasil</i></div>
+        <a class="badge ok" href="https://exposhoes.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">09–11/03</div>
+        <div class="n"><b>Fimec 2027 ·</b> <i>Novo Hamburgo, RS, Brasil</i></div>
+        <a class="badge ok" href="https://www.fimec.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Filo ·</b> <i>Milão, Itália</i></div>
+        <a class="badge pr" href="https://www.knittingtradejournal.com/2026/10/29/filo-confirms-2027-dates-as-it-builds-international-buyer-links/">Previsto</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">15/03</div><div class="n"><b>Dia do Consumidor.</b></div></div><div class="row slim"><div class="d ">26/03</div><div class="n"><b>Sexta-feira Santa.</b></div></div><div class="row slim"><div class="d ">28/03</div><div class="n"><b>Páscoa.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>07</span></footer>
 </section>
 
 <section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Março · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">02–04/03</div>
-        <div class="n"><b>Expo Shoes 2027</b><i>Campina Grande, PB, Brasil</i></div>
-        <a class="badge ok" href="https://exposhoes.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">09–11/03</div>
-        <div class="n"><b>Fimec 2027</b><i>Novo Hamburgo, RS, Brasil</i></div>
-        <a class="badge ok" href="https://www.fimec.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Filo</b><i>Milão, Itália</i></div>
-        <a class="badge pr" href="https://www.knittingtradejournal.com/2026/10/29/filo-confirms-2027-dates-as-it-builds-international-buyer-links/">Previsto</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">15/03</div><div class="n"><b>Dia do Consumidor.</b></div></div><div class="row slim"><div class="d ">26/03</div><div class="n"><b>Sexta-feira Santa.</b></div></div><div class="row slim"><div class="d ">28/03</div><div class="n"><b>Páscoa.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Desenvolvimento e planejamento de Outono/Inverno 2027.</p>
+    <p class="ctx">As referências apresentadas nas semanas de moda podem ajudar marcas a identificar cores, modelagens, materiais e propostas que influenciarão as próximas temporadas.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">personalize a comunicação de acordo com o comportamento de compra. Recomendações de produtos, sugestões de looks e experiências mais personalizadas ajudam a tornar a jornada mais relevante.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>personalize a comunicação de acordo com o comportamento de compra. Recomendações de produtos, sugestões de looks e experiências mais personalizadas ajudam a tornar a jornada mais relevante.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>08</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>04 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">04</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Abril</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">04</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">Abril</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d sm">No mês</div>
         <div class="n"><b>Shanghai Fashion Week</b></div>
         <a class="badge pr" href="https://fashionunited.ch/veranstaltungen/Shanghai-Fashion-Week">Previsto</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Outono/Inverno 2027</p>
-      <p class="ctx">Período de destaque para a comercialização de peças de inverno, com atenção especial ao mix de produtos, reposição e campanhas sazonais.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">06–08/04</div>
+        <div class="n"><b>FIT 0/16 ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge ok" href="https://fitpueriexpo.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">06–08/04</div>
+        <div class="n"><b>Private Label Brasil 2027 ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge ok" href="https://privatelabelbrazil.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">12–16/04</div>
+        <div class="n"><b>Rio Fashion Week 2027 ·</b> <i>Rio de Janeiro, RJ, Brasil</i></div>
+        <a class="badge pr" href="https://portalradar.com.br/rio-fashion-week-confirma-segunda-edicao-para-abril-de-2027/">Previsto</a>
+      </div><div class="row">
+        <div class="d ">20–22/04</div>
+        <div class="n"><b>Minas Trend ·</b> <i>Belo Horizonte, MG, Brasil</i></div>
+        <a class="badge ok" href="https://www.instagram.com/minastrend_/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">27–30/04</div>
+        <div class="n"><b>Tecnotêxtil Brasil 2027 ·</b> <i>Americana, SP, Brasil</i></div>
+        <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Consolidação das coleções de Outono/Inverno no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Início da preparação para o Dia das Mães.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das coleções de Primavera/Verão 2027–2028.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>09</span></footer>
 </section>
 
 <section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Abril · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">06–08/04</div>
-        <div class="n"><b>FIT 0/16</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge ok" href="https://fitpueriexpo.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">06–08/04</div>
-        <div class="n"><b>Private Label Brasil 2027</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge ok" href="https://privatelabelbrazil.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">12–16/04</div>
-        <div class="n"><b>Rio Fashion Week 2027</b><i>Rio de Janeiro, RJ, Brasil</i></div>
-        <a class="badge pr" href="https://portalradar.com.br/rio-fashion-week-confirma-segunda-edicao-para-abril-de-2027/">Previsto</a>
-      </div><div class="row">
-        <div class="d ">20–22/04</div>
-        <div class="n"><b>Minas Trend</b><i>Belo Horizonte, MG, Brasil</i></div>
-        <a class="badge ok" href="https://www.instagram.com/minastrend_/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">27–30/04</div>
-        <div class="n"><b>Tecnotêxtil Brasil 2027</b><i>Americana, SP, Brasil</i></div>
-        <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Consolidação das coleções de Outono/Inverno no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Início da preparação para o Dia das Mães.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das coleções de Primavera/Verão 2027–2028.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Outono/Inverno 2027</p>
+    <p class="ctx">Período de destaque para a comercialização de peças de inverno, com atenção especial ao mix de produtos, reposição e campanhas sazonais.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">desenvolva vitrines/banners com sugestões de presentes por estilo, categoria ou faixa de preço. Facilitar a escolha pode tornar a experiência de compra mais simples e aumentar as oportunidades de conversão.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>desenvolva vitrines/banners com sugestões de presentes por estilo, categoria ou faixa de preço. Facilitar a escolha pode tornar a experiência de compra mais simples e aumentar as oportunidades de conversão.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>10</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>05 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">05</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">Maio</h2>
+  </div>
   
-    <div class="mhead">
-      <div class="mtop"><span class="num">05</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Maio</h2>
-    </div>
-  
-    <div class="sec">
-      <span class="stamp" style="--r:1.5deg">Datas comerciais</span>
-      <div class="rows"><div class="row slim"><div class="d ">01/05</div><div class="n"><b>Dia do Trabalho.</b></div></div><div class="row slim"><div class="d ">09/05</div><div class="n"><b>Dia das Mães.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Planejamento de campanhas de Dia dos Namorados.</b></div></div></div>
-    </div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Desenvolvimento das próximas coleções Primavera/Verão.</p>
-      <p class="ctx">É um bom momento para acompanhar materiais, cores, tecnologias e propostas que podem orientar o desenvolvimento de novos produtos.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>ONDM – O Negócio da Moda ·</b> <i>Caruaru, PE, Brasil</i></div>
+        <a class="badge an" href="https://www.instagram.com/p/Dfc8wDMiTwH/">A anunciar</a>
+      </div><div class="row">
+        <div class="d ">26/05–13/06</div>
+        <div class="n"><b>FestMalhas 2027 ·</b> <i>Jacutinga, MG, Brasil</i></div>
+        <a class="badge pr" href="https://www.instagram.com/p/DZ8dQuZFMPd/">Previsto</a>
+      </div><div class="row">
+        <div class="d ">31/05–02/06</div>
+        <div class="n"><b>BFSHOW ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge ok" href="https://bfshow.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">11–13/05</div>
+        <div class="n"><b>ITF Intertex Portugal ·</b> <i>Porto, Portugal</i></div>
+        <a class="badge ok" href="https://intertexportugal.com/pt/homee/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">11–13/05</div>
+        <div class="n"><b>Texprocess Americas e Techtextil North America ·</b> <i>Atlanta, EUA</i></div>
+        <a class="badge ok" href="https://texprocess-americas.us.messefrankfurt.com/atlanta/en.html">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">25–27/05</div>
+        <div class="n"><b>Global Fashion Summit ·</b> <i>Copenhague, Dinamarca</i></div>
+        <a class="badge ok" href="https://globalfashionagenda.org/events/global-fashion-summit/">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">01/05</div><div class="n"><b>Dia do Trabalho.</b></div></div><div class="row slim"><div class="d ">09/05</div><div class="n"><b>Dia das Mães.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Planejamento de campanhas de Dia dos Namorados.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>11</span></footer>
 </section>
 
 <section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Maio · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>ONDM – O Negócio da Moda</b><i>Caruaru, PE, Brasil</i></div>
-        <a class="badge an" href="https://www.instagram.com/p/Dfc8wDMiTwH/">A anunciar</a>
-      </div><div class="row">
-        <div class="d ">26/05–13/06</div>
-        <div class="n"><b>FestMalhas 2027</b><i>Jacutinga, MG, Brasil</i></div>
-        <a class="badge pr" href="https://www.instagram.com/p/DZ8dQuZFMPd/">Previsto</a>
-      </div><div class="row">
-        <div class="d ">31/05–02/06</div>
-        <div class="n"><b>BFSHOW</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge ok" href="https://bfshow.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">11–13/05</div>
-        <div class="n"><b>ITF Intertex Portugal</b><i>Porto, Portugal</i></div>
-        <a class="badge ok" href="https://intertexportugal.com/pt/homee/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">11–13/05</div>
-        <div class="n"><b>Texprocess Americas e Techtextil North America</b><i>Atlanta, EUA</i></div>
-        <a class="badge ok" href="https://texprocess-americas.us.messefrankfurt.com/atlanta/en.html">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">25–27/05</div>
-        <div class="n"><b>Global Fashion Summit</b><i>Copenhague, Dinamarca</i></div>
-        <a class="badge ok" href="https://globalfashionagenda.org/events/global-fashion-summit/">Confirmado</a>
-      </div></div></div>
-  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Desenvolvimento das próximas coleções Primavera/Verão.</p>
+    <p class="ctx">É um bom momento para acompanhar materiais, cores, tecnologias e propostas que podem orientar o desenvolvimento de novos produtos.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:32pt">organize categorias especiais de presentes e facilite a navegação com filtros, recomendações e informações claras sobre produtos e tamanhos.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>organize categorias especiais de presentes e facilite a navegação com filtros, recomendações e informações claras sobre produtos e tamanhos.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>12</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>06 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">06</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Junho</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">06</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:100pt">Junho</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">18–22/06</div>
-        <div class="n"><b>Milan Fashion Week Masculina</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>Milan Fashion Week Masculina ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge ok" href="https://www.cameramoda.it/en/milano-moda-uomo/calendar/">Confirmado</a>
       </div><div class="row">
         <div class="d ">22–27/06</div>
-        <div class="n"><b>Paris Fashion Week Masculina</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>Paris Fashion Week Masculina ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Apresentações de Primavera/Verão 2028.</p>
-      <p class="ctx">As apresentações de moda masculina e os eventos de negócios antecipam referências e oportunidades para o desenvolvimento de novas coleções.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">22–24/06</div>
+        <div class="n"><b>Goiás Tech Fashion 2027 ·</b> <i>Goiânia, GO, Brasil</i></div>
+        <a class="badge ok" href="https://goiastechfashion.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">29/06–01/07</div>
+        <div class="n"><b>SICC – Salão de Inovação do Couro e do Calçado ·</b> <i>Novo Hamburgo, RS, Brasil</i></div>
+        <a class="badge pr" href="https://www.sicc.com.br/pt">Previsto</a>
+      </div><div class="row">
+        <div class="d ">15–18/06</div>
+        <div class="n"><b>Pitti Uomo ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://uomo.pittimmagine.com/en">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">23–24/06</div>
+        <div class="n"><b>Pitti Bimbo ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://bimbo.pittimmagine.com/en">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">23–25/06</div>
+        <div class="n"><b>Pitti Filati ·</b> <i>Florença, Itália</i></div>
+        <a class="badge ok" href="https://filati.pittimmagine.com/en">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">12/06</div><div class="n"><b>Dia dos Namorados.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Festas juninas.</b></div></div><div class="row slim"><div class="d ">21/06</div><div class="n"><b>Início do inverno no hemisfério sul.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Liquidações de meio de ano.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Apresentação de coleções masculinas Primavera/Verão 2028 nas semanas de moda internacionais.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>13</span></footer>
 </section>
 
 <section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Junho · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">22–24/06</div>
-        <div class="n"><b>Goiás Tech Fashion 2027</b><i>Goiânia, GO, Brasil</i></div>
-        <a class="badge ok" href="https://goiastechfashion.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">29/06–01/07</div>
-        <div class="n"><b>SICC – Salão de Inovação do Couro e do Calçado</b><i>Novo Hamburgo, RS, Brasil</i></div>
-        <a class="badge pr" href="https://www.sicc.com.br/pt">Previsto</a>
-      </div><div class="row">
-        <div class="d ">15–18/06</div>
-        <div class="n"><b>Pitti Uomo</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://uomo.pittimmagine.com/en">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">23–24/06</div>
-        <div class="n"><b>Pitti Bimbo</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://bimbo.pittimmagine.com/en">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">23–25/06</div>
-        <div class="n"><b>Pitti Filati</b><i>Florença, Itália</i></div>
-        <a class="badge ok" href="https://filati.pittimmagine.com/en">Confirmado</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">12/06</div><div class="n"><b>Dia dos Namorados.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Festas juninas.</b></div></div><div class="row slim"><div class="d ">21/06</div><div class="n"><b>Início do inverno no hemisfério sul.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Liquidações de meio de ano.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Apresentação de coleções masculinas Primavera/Verão 2028 nas semanas de moda internacionais.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Apresentações de Primavera/Verão 2028.</p>
+    <p class="ctx">As apresentações de moda masculina e os eventos de negócios antecipam referências e oportunidades para o desenvolvimento de novas coleções.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:32pt">crie combinações de produtos e sugestões de presentes para facilitar a escolha. Uma boa apresentação do mix também ajuda a estimular a compra de mais de um item.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>crie combinações de produtos e sugestões de presentes para facilitar a escolha. Uma boa apresentação do mix também ajuda a estimular a compra de mais de um item.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>14</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>07 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">07</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Julho</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">07</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:156pt">Julho</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">05–08/07</div>
-        <div class="n"><b>Paris Haute Couture Week</b><i>Outono/Inverno 2027–2028</i></div>
+        <div class="n"><b>Paris Haute Couture Week ·</b> <i>Outono/Inverno 2027–2028</i></div>
         <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
       </div><div class="row">
         <div class="d ">01–04/07</div>
         <div class="n"><b>Berlin Fashion Week</b></div>
         <a class="badge pr" href="https://www.fashion-council-germany.org/en/events/berlin-fashion-week-ss28">Previsto</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Preparação para Primavera/Verão 2027/2028.</p>
-      <p class="ctx">É o momento de organizar os próximos lançamentos, planejar o mix de produtos e alinhar as campanhas de transição de estação.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">07 e 08/07</div>
+        <div class="n"><b>Inspiramais 2027 ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge ok" href="https://inspiramais.com.br/">Confirmado</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Munich Fabric Start ·</b> <i>Munique, Alemanha</i></div>
+        <a class="badge pr" href="https://wwd.com/sourcing-journal/industry-news/munich-fabric-start-dates-shift-to-july-from-june-1239387741/">Previsto</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Kingpins New York ·</b> <i>Nova York, EUA</i></div>
+        <a class="badge pr" href="https://kingpinsshow.com/show-dates/">Previsto</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de inverno.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Desenvolvimento e planejamento das coleções de Primavera/Verão.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Planejamento de campanhas para o Dia dos Pais.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>15</span></footer>
 </section>
 
 <section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Julho · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">07 e 08/07</div>
-        <div class="n"><b>Inspiramais 2027</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge ok" href="https://inspiramais.com.br/">Confirmado</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Munich Fabric Start</b><i>Munique, Alemanha</i></div>
-        <a class="badge pr" href="https://wwd.com/sourcing-journal/industry-news/munich-fabric-start-dates-shift-to-july-from-june-1239387741/">Previsto</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Kingpins New York</b><i>Nova York, EUA</i></div>
-        <a class="badge pr" href="https://kingpinsshow.com/show-dates/">Previsto</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Liquidações de inverno.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Desenvolvimento e planejamento das coleções de Primavera/Verão.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Planejamento de campanhas para o Dia dos Pais.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Preparação para Primavera/Verão 2027/2028.</p>
+    <p class="ctx">É o momento de organizar os próximos lançamentos, planejar o mix de produtos e alinhar as campanhas de transição de estação.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:32pt">acompanhe o desempenho dos produtos em promoção e identifique quais categorias e tamanhos precisam de reposição para a próxima coleção.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>acompanhe o desempenho dos produtos em promoção e identifique quais categorias e tamanhos precisam de reposição para a próxima coleção.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>16</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>08 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">08</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Agosto</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">08</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:156pt">Agosto</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d sm">No mês</div>
-        <div class="n"><b>Copenhagen Fashion Week</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>Copenhagen Fashion Week ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge pr" href="https://copenhagenfashionweek.com/">Previsto</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Lançamentos de Primavera/Verão 2027/2028.</p>
-      <p class="ctx">O período é estratégico para apresentar novidades, atualizar vitrines e preparar campanhas de lançamento.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">31/07–02/08</div>
+        <div class="n"><b>Veste SC 2027 ·</b> <i>Blumenau, SC, Brasil</i></div>
+        <a class="badge an" href="https://vestesc.com.br/">A anunciar</a>
+      </div><div class="row">
+        <div class="d ">24–26/08</div>
+        <div class="n"><b>Febratex Summit 2027 ·</b> <i>Blumenau, SC, Brasil</i></div>
+        <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">08/08</div><div class="n"><b>Dia dos Pais.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Entrada das coleções de Primavera/Verão no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das campanhas de Black Friday.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Preparação para os lançamentos do último trimestre.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>17</span></footer>
 </section>
 
 <section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Agosto · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">31/07–02/08</div>
-        <div class="n"><b>Veste SC 2027</b><i>Blumenau, SC, Brasil</i></div>
-        <a class="badge an" href="https://vestesc.com.br/">A anunciar</a>
-      </div><div class="row">
-        <div class="d ">24–26/08</div>
-        <div class="n"><b>Febratex Summit 2027</b><i>Blumenau, SC, Brasil</i></div>
-        <a class="badge ok" href="https://febratex.com.br/">Confirmado</a>
-      </div></div></div>
-  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">08/08</div><div class="n"><b>Dia dos Pais.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Entrada das coleções de Primavera/Verão no varejo.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Planejamento das campanhas de Black Friday.</b></div></div><div class="row slim"><div class="d dot"><span></span></div><div class="n"><b>Preparação para os lançamentos do último trimestre.</b></div></div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Lançamentos de Primavera/Verão 2027/2028.</p>
+    <p class="ctx">O período é estratégico para apresentar novidades, atualizar vitrines e preparar campanhas de lançamento.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">explore sugestões de produtos por perfil e ocasião. Combinações de peças, kits e recomendações personalizadas podem facilitar a escolha e ampliar as possibilidades de compra.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>explore sugestões de produtos por perfil e ocasião. Combinações de peças, kits e recomendações personalizadas podem facilitar a escolha e ampliar as possibilidades de compra.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>18</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>09 / 12</span></header>
-  
-    <div class="mhead">
-      <div class="mtop"><span class="num">09</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Setembro</h2>
-    </div>
+  <div class="mhead">
+    <div class="mtop"><span class="num">09</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:100pt">Setembro</h2>
+  </div>
   <div class="sec"><span class="stamp" style="--r:-1.6deg">Semanas de moda</span><div class="rows"><div class="row">
         <div class="d ">21–27/09</div>
-        <div class="n"><b>Milan Fashion Week Feminina</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>Milan Fashion Week Feminina ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge ok" href="https://www.cameramoda.it/it/milano-moda-donna/">Confirmado</a>
       </div><div class="row">
         <div class="d ">27/09–05/10</div>
-        <div class="n"><b>Paris Fashion Week Feminina</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>Paris Fashion Week Feminina ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
       </div><div class="row">
         <div class="d sm">No mês</div>
-        <div class="n"><b>New York Fashion Week</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>New York Fashion Week ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge an" href="https://fashionweekonline.com/fashion-week-dates">A anunciar</a>
       </div><div class="row">
         <div class="d sm">No mês</div>
-        <div class="n"><b>London Fashion Week</b><i>Primavera/Verão 2028</i></div>
+        <div class="n"><b>London Fashion Week ·</b> <i>Primavera/Verão 2028</i></div>
         <a class="badge an" href="https://fashionweekonline.com/fashion-week-dates">A anunciar</a>
       </div></div></div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Apresentações de Primavera/Verão 2028.</p>
-      <p class="ctx">As semanas de moda de setembro ajudam a identificar tendências e referências para as próximas temporadas, influenciando o planejamento de coleções e a comunicação das marcas.</p>
-    </div>
-  <footer class="folio"><span>Sizebay</span><span>19</span></footer>
-</section>
-
-<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
-  <header class="run"><span>Calendário de moda 2027</span><span>Setembro · continuação</span></header>
   <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
         <div class="d ">21–23/09</div>
-        <div class="n"><b>Gotex Show 2027</b><i>São Paulo, SP, Brasil</i></div>
+        <div class="n"><b>Gotex Show 2027 ·</b> <i>São Paulo, SP, Brasil</i></div>
         <a class="badge ok" href="https://gotexshow.com.br/">Confirmado</a>
       </div><div class="row">
         <div class="d ">23–26/09</div>
-        <div class="n"><b>White Milano</b><i>Milão, Itália</i></div>
+        <div class="n"><b>White Milano ·</b> <i>Milão, Itália</i></div>
         <a class="badge ok" href="https://www.whiteshow.com/upcoming-dates/">Confirmado</a>
       </div><div class="row">
         <div class="d ">07–09/09</div>
@@ -716,144 +659,135 @@ a{color:inherit;text-decoration:none}
         <a class="badge an" href="https://thelondontextilefair.co.uk/">A anunciar</a>
       </div></div></div>
   <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">07/09</div><div class="n"><b>Independência do Brasil.</b></div></div><div class="row slim"><div class="d ">15/09</div><div class="n"><b>Dia do Cliente.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Início do aquecimento para o Dia das Crianças.</b></div></div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>19</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>Calendário de moda 2027</span><span>Setembro · continuação</span></header>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Apresentações de Primavera/Verão 2028.</p>
+    <p class="ctx">As semanas de moda de setembro ajudam a identificar tendências e referências para as próximas temporadas, influenciando o planejamento de coleções e a comunicação das marcas.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">acompanhe as tendências e traduza as referências para a realidade da sua marca. Produza conteúdos que ajudem o consumidor a descobrir novidades, combinar peças e encontrar produtos que tenham a ver com seu estilo.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>acompanhe as tendências e traduza as referências para a realidade da sua marca. Produza conteúdos que ajudem o consumidor a descobrir novidades, combinar peças e encontrar produtos que tenham a ver com seu estilo.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>20</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>10 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">10</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:156pt">Outubro</h2>
+  </div>
   
-    <div class="mhead">
-      <div class="mtop"><span class="num">10</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Outubro</h2>
-    </div>
-  
-    <div class="sec">
-      <span class="stamp" style="--r:1.5deg">Datas comerciais</span>
-      <div class="rows"><div class="row slim"><div class="d ">12/10</div><div class="n"><b>Dia das Crianças.</b></div></div><div class="row slim"><div class="d ">15/10</div><div class="n"><b>Dia do Professor.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Início das campanhas de aquecimento para Black Friday.</b></div></div></div>
-    </div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Alto Verão e coleções especiais de fim de ano.</p>
-      <p class="ctx">É o momento de trabalhar lançamentos de alto verão, moda festa e coleções cápsula para as celebrações de fim de ano.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d ">05–07/10</div>
+        <div class="n"><b>Maquintex Signs Pack&amp;Graph 2027 ·</b> <i>Fortaleza, CE, Brasil</i></div>
+        <a class="badge ok" href="https://maquintex.com.br/a-feira/">Confirmado</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>ONDM – O Negócio da Moda ·</b> <i>Balneário Camboriú, SC, Brasil</i></div>
+        <a class="badge an" href="https://www.instagram.com/p/Dfc8wDMiTwH/?img_index=1">A anunciar</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>São Paulo Fashion Week ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge an" href="https://spfw.com.br/">A anunciar</a>
+      </div><div class="row">
+        <div class="d ">26–28/10</div>
+        <div class="n"><b>Advanced Textiles Expo ·</b> <i>Baltimore, EUA</i></div>
+        <a class="badge ok" href="https://advancedtextilesexpo.com/">Confirmado</a>
+      </div><div class="row">
+        <div class="d ">05/10</div>
+        <div class="n"><b>Encerramento da Paris Fashion Week Feminina ·</b> <i>Primavera/Verão 2028</i></div>
+        <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">12/10</div><div class="n"><b>Dia das Crianças.</b></div></div><div class="row slim"><div class="d ">15/10</div><div class="n"><b>Dia do Professor.</b></div></div><div class="row slim"><div class="d sm">No mês</div><div class="n"><b>Início das campanhas de aquecimento para Black Friday.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>21</span></footer>
 </section>
 
 <section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Outubro · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d ">05–07/10</div>
-        <div class="n"><b>Maquintex Signs Pack&amp;Graph 2027</b><i>Fortaleza, CE, Brasil</i></div>
-        <a class="badge ok" href="https://maquintex.com.br/a-feira/">Confirmado</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>ONDM – O Negócio da Moda</b><i>Balneário Camboriú, SC, Brasil</i></div>
-        <a class="badge an" href="https://www.instagram.com/p/Dfc8wDMiTwH/?img_index=1">A anunciar</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>São Paulo Fashion Week</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge an" href="https://spfw.com.br/">A anunciar</a>
-      </div><div class="row">
-        <div class="d ">26–28/10</div>
-        <div class="n"><b>Advanced Textiles Expo</b><i>Baltimore, EUA</i></div>
-        <a class="badge ok" href="https://advancedtextilesexpo.com/">Confirmado</a>
-      </div><div class="row">
-        <div class="d ">05/10</div>
-        <div class="n"><b>Encerramento da Paris Fashion Week Feminina</b><i>Primavera/Verão 2028</i></div>
-        <a class="badge ok" href="https://www.fhcm.paris/en/upcoming-seasons-and-previous-editions">Confirmado</a>
-      </div></div></div>
-  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Alto Verão e coleções especiais de fim de ano.</p>
+    <p class="ctx">É o momento de trabalhar lançamentos de alto verão, moda festa e coleções cápsula para as celebrações de fim de ano.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:32pt">revise o histórico de vendas, identifique os produtos com maior potencial e verifique se a grade de tamanhos está preparada para atender à demanda.</p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>revise o histórico de vendas, identifique os produtos com maior potencial e verifique se a grade de tamanhos está preparada para atender à demanda.</p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>22</span></footer>
 </section>
 
 <section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>11 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">11</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">Novembro</h2>
+  </div>
   
-    <div class="mhead">
-      <div class="mtop"><span class="num">11</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Novembro</h2>
-    </div>
-  
-    <div class="sec">
-      <span class="stamp" style="--r:1.5deg">Datas comerciais</span>
-      <div class="rows"><div class="row slim"><div class="d ">02/11</div><div class="n"><b>Finados.</b></div></div><div class="row slim"><div class="d ">11/11</div><div class="n"><b>11.11 | Singles' Day.</b></div></div><div class="row slim"><div class="d ">15/11</div><div class="n"><b>Proclamação da República.</b></div></div><div class="row slim"><div class="d ">20/11</div><div class="n"><b>Dia da Consciência Negra.</b></div></div><div class="row slim"><div class="d ">26/11</div><div class="n"><b>Black Friday.</b></div></div><div class="row slim"><div class="d ">29/11</div><div class="n"><b>Cyber Monday.</b></div></div></div>
-    </div>
-  <div class="spacer"></div>
-  
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Coleções cápsula e lançamentos especiais de fim de ano.</p>
-      <p class="ctx">Novembro também pode ser aproveitado para apresentar peças exclusivas, edições limitadas e coleções especiais para as festas.</p>
-    </div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Casa de Criadores ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge an" href="https://www.instagram.com/casadecriadores/">A anunciar</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Brasil Eco Fashion Week ·</b> <i>São Paulo, SP, Brasil</i></div>
+        <a class="badge an" href="https://www.instagram.com/brasilecofashionweek/">A anunciar</a>
+      </div><div class="row">
+        <div class="d sm">No mês</div>
+        <div class="n"><b>Ceará Fashion Week ·</b> <i>Fortaleza, CE, Brasil</i></div>
+        <a class="badge an" href="https://www.cnfw.com.br/cefw">A anunciar</a>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">02/11</div><div class="n"><b>Finados.</b></div></div><div class="row slim"><div class="d ">11/11</div><div class="n"><b>11.11 | Singles' Day.</b></div></div><div class="row slim"><div class="d ">15/11</div><div class="n"><b>Proclamação da República.</b></div></div><div class="row slim"><div class="d ">20/11</div><div class="n"><b>Dia da Consciência Negra.</b></div></div><div class="row slim"><div class="d ">26/11</div><div class="n"><b>Black Friday.</b></div></div><div class="row slim"><div class="d ">29/11</div><div class="n"><b>Cyber Monday.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>23</span></footer>
 </section>
 
 <section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Novembro · continuação</span></header>
-  <div class="sec"><span class="stamp" style="--r:1.1deg">Feiras e eventos</span><div class="rows"><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Casa de Criadores</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge an" href="https://www.instagram.com/casadecriadores/">A anunciar</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Brasil Eco Fashion Week</b><i>São Paulo, SP, Brasil</i></div>
-        <a class="badge an" href="https://www.instagram.com/brasilecofashionweek/">A anunciar</a>
-      </div><div class="row">
-        <div class="d sm">No mês</div>
-        <div class="n"><b>Ceará Fashion Week</b><i>Fortaleza, CE, Brasil</i></div>
-        <a class="badge an" href="https://www.cnfw.com.br/cefw">A anunciar</a>
-      </div></div></div>
-  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Coleções cápsula e lançamentos especiais de fim de ano.</p>
+    <p class="ctx">Novembro também pode ser aproveitado para apresentar peças exclusivas, edições limitadas e coleções especiais para as festas.</p>
+  </div>
   <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:-0.7deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">prepare sua operação para atender ao aumento de acessos e pedidos. Garanta informações claras sobre produtos, tamanhos, prazos e condições de troca. <strong>Uma experiência de compra mais segura ajuda a reduzir dúvidas e obstáculos na conversão.</strong></p>
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>prepare sua operação para atender ao aumento de acessos e pedidos. Garanta informações claras sobre produtos, tamanhos, prazos e condições de troca. <strong>Uma experiência de compra mais segura ajuda a reduzir dúvidas e obstáculos na conversão.</strong></p>
    </div>
   <footer class="folio"><span>Sizebay</span><span>24</span></footer>
 </section>
 
-<section class="page single">
-  <div class="top hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
-    <header class="run"><span>Calendário de moda 2027</span><span>12 / 12</span></header>
-    
-    <div class="mhead">
-      <div class="mtop"><span class="num">12</span><span class="script yr">2027</span></div>
-      <h2 class="mname">Dezembro</h2>
-    </div>
-    <div class="spacer"></div>
-    
-    <div class="sec coll">
-      <span class="stamp" style="--r:-0.7deg">Coleções</span>
-      <p class="ctit">Alto Verão, Resort e coleções cápsula.</p>
-      <p class="ctx">É um período interessante para trabalhar lançamentos especiais, peças para festas e produtos voltados às férias e viagens.</p>
-    </div>
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>Calendário de moda 2027</span><span>12 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">12</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:156pt">Dezembro</h2>
   </div>
-  <div class="bottom" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
-    
-    <div class="sec">
-      <span class="stamp" style="--r:1.5deg">Datas comerciais</span>
-      <div class="rows"><div class="row slim"><div class="d ">21/12</div><div class="n"><b>Início do verão no hemisfério sul.</b></div></div><div class="row slim"><div class="d ">24/12</div><div class="n"><b>Véspera de Natal.</b></div></div><div class="row slim"><div class="d ">25/12</div><div class="n"><b>Natal.</b></div></div><div class="row slim"><div class="d ">26/12</div><div class="n"><b>Boxing Day.</b></div></div><div class="row slim"><div class="d ">31/12</div><div class="n"><b>Réveillon.</b></div></div></div>
-    </div>
-    <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
-     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
-     <p style="font-size:27pt">facilite a escolha de presentes com vitrines especiais, sugestões de produtos e informações claras sobre entrega. Aproveite também para analisar os resultados do ano e começar o planejamento de 2028.</p>
-   </div>
-  </div>
+  
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Datas comerciais</span><div class="rows"><div class="row slim"><div class="d ">21/12</div><div class="n"><b>Início do verão no hemisfério sul.</b></div></div><div class="row slim"><div class="d ">24/12</div><div class="n"><b>Véspera de Natal.</b></div></div><div class="row slim"><div class="d ">25/12</div><div class="n"><b>Natal.</b></div></div><div class="row slim"><div class="d ">26/12</div><div class="n"><b>Boxing Day.</b></div></div><div class="row slim"><div class="d ">31/12</div><div class="n"><b>Réveillon.</b></div></div></div></div>
   <footer class="folio"><span>Sizebay</span><span>25</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>Calendário de moda 2027</span><span>Dezembro · continuação</span></header>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Coleções</span>
+    <p class="ctit">Alto Verão, Resort e coleções cápsula.</p>
+    <p class="ctx">É um período interessante para trabalhar lançamentos especiais, peças para festas e produtos voltados às férias e viagens.</p>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">Dica para o e-commerce</span>
+     <p>facilite a escolha de presentes com vitrines especiais, sugestões de produtos e informações claras sobre entrega. Aproveite também para analisar os resultados do ano e começar o planejamento de 2028.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>26</span></footer>
 </section>
 
 <section class="page plan" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
   <header class="run"><span>Calendário de moda 2027</span><span>Planejamento de coleções</span></header>
-  <div class="stampwrap"><span class="stamp" style="--r:-1.6deg">Planejamento de coleções</span></div>
   <h2 class="h-mid">O calendário da moda não acompanha apenas as estações.</h2>
   <div class="two"><p>Na indústria fashion, o planejamento de uma coleção começa muito antes de ela chegar ao consumidor. Pesquisa, desenvolvimento, sourcing, produção, apresentação e comercialização fazem parte de um ciclo que exige organização e antecedência.</p><p>Para ajudar você a visualizar esse movimento, reunimos algumas das principais janelas de planejamento de coleções em 2027.</p></div>
   <div class="ptable">
@@ -873,7 +807,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="spacer"></div>
   <div class="note"><b>Dica:</b> não existe uma única data ideal para lançar uma coleção cápsula. O melhor momento depende do público, da proposta da marca, da sazonalidade e do comportamento de compra dos consumidores.</div>
-  <footer class="folio"><span>Sizebay</span><span>26</span></footer>
+  <footer class="folio"><span>Sizebay</span><span>27</span></footer>
 </section>
 
 <section class="page check" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
@@ -897,7 +831,7 @@ a{color:inherit;text-decoration:none}
       </div>
   </div>
   <p class="closing">Lembre-se: planejamento não é algo que acontece uma única vez. Acompanhe os resultados, revise suas estratégias e adapte o calendário conforme as necessidades do seu negócio.</p>
-  <footer class="folio"><span>Sizebay</span><span>27</span></footer>
+  <footer class="folio"><span>Sizebay</span><span>28</span></footer>
 </section>
 
 <section class="page cta" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
@@ -914,7 +848,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <p class="kicker">Seu próximo ano pode começar com escolhas mais inteligentes.</p>
   <a class="btn" href="https://sizebay.com/pt/">Conheça a Sizebay →</a>
-  <footer class="folio"><span>Sizebay</span><span>28</span></footer>
+  <footer class="folio"><span>Sizebay</span><span>29</span></footer>
 </section>
 
 <section class="page back" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">

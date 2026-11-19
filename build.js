@@ -49,7 +49,7 @@ const eventRows = (list) =>
       const dt = fmtDate(d);
       return `<div class="row">
         <div class="d ${dt.small ? 'sm' : ''}">${esc(dt.t)}</div>
-        <div class="n"><b>${esc(n)}</b>${s ? `<i>${esc(s)}</i>` : ''}</div>
+        <div class="n"><b>${esc(n)}${s ? ' ·' : ''}</b>${s ? ` <i>${esc(s)}</i>` : ''}</div>
         ${badge(st, u)}
       </div>`;
     })
@@ -58,7 +58,7 @@ const eventRows = (list) =>
 const dateRows = (list) =>
   list
     .map((raw) => {
-      const m = raw.match(/^(\d{2}\/\d{2}|Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro) — (.*)$/);
+      const m = raw.match(/^(\d{2}(?: e \d{2})?\/\d{2}|Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro) — (.*)$/);
       if (m) {
         const dt = fmtDate(m[1]);
         return `<div class="row slim"><div class="d ${dt.small ? 'sm' : ''}">${esc(dt.t)}</div><div class="n"><b>${esc(m[2])}</b></div></div>`;
@@ -70,7 +70,7 @@ const dateRows = (list) =>
 const tipPanel = (tip, q, i) =>
   `<div class="tip" style="${tStyle(T.pink)}">
      ${stamp('Dica para o e-commerce', i)}
-     <p style="font-size:${tip.length < 170 ? 32 : tip.length < 260 ? 27 : 23}pt">${md(tip)}</p>
+     <p>${md(tip)}</p>
    </div>`;
 
 const qStyle = (q) => tStyle(Q[q]);
@@ -117,73 +117,42 @@ pages.push(`
   </div>
 </section>`);
 
-// MESES
+// MESES — página 1: semanas de moda, feiras e eventos, datas comerciais
+//         página 2: coleções + dica para o e-commerce
 C.months.forEach((m, i) => {
   const q = Math.floor(i / 3);
   const num = String(i + 1).padStart(2, '0');
-  const hasWeeks = m.weeks.length > 0;
-  const hasFairs = m.fairs.length > 0;
-  const single = !hasWeeks && !hasFairs;
+  const rowsCount = m.weeks.length + m.fairs.length + m.dates.length;
+  // o nome do mês cresce quando há pouco conteúdo na página
+  const nameSize = rowsCount >= 13 ? 92 : rowsCount >= 11 ? 100 : rowsCount >= 9 ? 126 : 156;
 
-  const monthHead = `
-    <div class="mhead">
-      <div class="mtop"><span class="num">${num}</span><span class="script yr">2027</span></div>
-      <h2 class="mname">${esc(m.name)}</h2>
-    </div>`;
+  const sec = (label, k, rows) =>
+    `<div class="sec">${stamp(label, k)}<div class="rows">${rows}</div></div>`;
 
-  const collBlock = `
-    <div class="sec coll">
-      ${stamp('Coleções', 2)}
-      <p class="ctit">${esc(m.collection[0])}</p>
-      <p class="ctx">${esc(m.collection[1])}</p>
-    </div>`;
-
-  const datesBlock = `
-    <div class="sec">
-      ${stamp('Datas comerciais', 3)}
-      <div class="rows">${dateRows(m.dates)}</div>
-    </div>`;
-
-  if (single) {
-    // 1 página só (dezembro)
-    pageNo++;
-    pages.push(`
-<section class="page single">
-  <div class="top hero" style="${qStyle(q)}">
-    ${running(`${num} / 12`)}
-    ${monthHead}
-    <div class="spacer"></div>
-    ${collBlock}
-  </div>
-  <div class="bottom" style="${qStyle(q)}">
-    ${datesBlock}
-    ${tipPanel(m.tip, q, 1)}
-  </div>
-  ${folio()}
-</section>`);
-    return;
-  }
-
-  // página 1
   pageNo++;
   pages.push(`
 <section class="page hero" style="${qStyle(q)}">
   ${running(`${num} / 12`)}
-  ${monthHead}
-  ${hasWeeks ? `<div class="sec">${stamp('Semanas de moda', 0)}<div class="rows">${eventRows(m.weeks)}</div></div>` : datesBlock}
-  <div class="spacer"></div>
-  ${collBlock}
+  <div class="mhead">
+    <div class="mtop"><span class="num">${num}</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:${nameSize}pt">${esc(m.name)}</h2>
+  </div>
+  ${m.weeks.length ? sec('Semanas de moda', 0, eventRows(m.weeks)) : ''}
+  ${m.fairs.length ? sec('Feiras e eventos', 1, eventRows(m.fairs)) : ''}
+  ${sec('Datas comerciais', 3, dateRows(m.dates))}
   ${folio()}
 </section>`);
 
-  // página 2
   pageNo++;
   pages.push(`
 <section class="page second" style="${qStyle(q)}">
   ${running(`${m.name} · continuação`)}
-  <div class="sec">${stamp('Feiras e eventos', 1)}<div class="rows">${eventRows(m.fairs)}</div></div>
-  ${hasWeeks ? `<div class="sec">${stamp('Datas comerciais', 3)}<div class="rows">${dateRows(m.dates)}</div></div>` : ''}
-  ${tipPanel(m.tip, q, 2)}
+  <div class="sec coll">
+    ${stamp('Coleções', 2)}
+    <p class="ctit">${esc(m.collection[0])}</p>
+    <p class="ctx">${esc(m.collection[1])}</p>
+  </div>
+  ${tipPanel(m.tip, q, 1)}
   ${folio()}
 </section>`);
 });
@@ -193,7 +162,6 @@ pageNo++;
 pages.push(`
 <section class="page plan" style="${tStyle(T.white)}">
   ${running('Planejamento de coleções')}
-  <div class="stampwrap">${stamp('Planejamento de coleções', 0)}</div>
   <h2 class="h-mid">${esc(C.planning.title)}</h2>
   <div class="two">${C.planning.text.map((t) => `<p>${esc(t)}</p>`).join('')}</div>
   <div class="ptable">
@@ -290,30 +258,30 @@ a{color:inherit;text-decoration:none}
 .script{font-family:'Pinyon Script',cursive;font-weight:400;letter-spacing:0}
 
 /* topo / rodapé */
-.run{display:flex;justify-content:space-between;font-size:7.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6mm}
-.folio{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:7pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.run{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6mm}
+.folio{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
 
 /* carimbo (tag rosa com borda pontilhada) */
-.stamp{display:inline-block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:14pt;line-height:1;letter-spacing:.01em;
+.stamp{display:inline-block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15pt;line-height:1;letter-spacing:.01em;
   padding:1.6mm 4mm 1.4mm;background:var(--sbg);color:var(--sfg);border:.45mm dotted var(--sfg);transform:rotate(var(--r,-1.5deg));transform-origin:left center;position:relative}
 .stamp.big{font-size:50pt;padding:2mm 5mm 1.6mm;letter-spacing:-.015em;position:absolute;white-space:nowrap;background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B}
 .stampwrap{margin-bottom:4mm;padding-left:1mm}
 
 /* linhas (eventos / datas) */
-.sec{margin-top:7mm}
-.sec>.stamp{margin-bottom:4mm;margin-left:1mm}
+.sec{margin-top:5.5mm}
+.sec>.stamp{margin-bottom:3mm;margin-left:1mm}
 .rows{border-top:1.2mm solid #FF9ACB}
-.row{display:grid;grid-template-columns:36mm 1fr auto;align-items:center;gap:4mm;padding:2.3mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
-.row .d{font-family:'Anton',sans-serif;font-size:15pt;line-height:1;letter-spacing:.01em}
-.row .d.sm{font-family:'Instrument Sans';font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.row{display:grid;grid-template-columns:34mm 1fr auto;align-items:center;gap:3mm;padding:1.9mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
+.row .d{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;letter-spacing:.01em}
+.row .d.sm{font-family:'Instrument Sans';font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .row .d.dot span{display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;background:currentColor}
-.row .n{display:flex;flex-direction:column;gap:.4mm}
-.row .n b{font-weight:600;font-size:10.5pt;line-height:1.2}
-.row .n i{font-family:'Instrument Serif',serif;font-size:11pt;line-height:1.1;opacity:.85}
+.row .n{display:block}
+.row .n b{font-weight:600;font-size:14pt;line-height:1.2}
+.row .n i{white-space:nowrap;font-family:'Instrument Serif',serif;font-size:14pt;line-height:1.2;opacity:.85}
 .row.slim{padding:1.9mm 0}
-.row.slim{grid-template-columns:36mm 1fr}
-.row.slim .n b{font-weight:500;font-size:10.5pt}
-.badge{font-size:6.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
+.row.slim{grid-template-columns:34mm 1fr}
+.row.slim .n b{font-weight:500;font-size:14pt}
+.badge{font-size:8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
 .badge.ok{background:#FF9ACB;color:#0B0B0B;border-color:#FF9ACB}
 .badge.an{border-style:dashed}
 
@@ -324,34 +292,16 @@ a{color:inherit;text-decoration:none}
 .yr{font-size:40pt;line-height:.9;color:var(--accent);transform:rotate(-5deg);display:inline-block;margin-bottom:-1mm}
 .mname{font-family:'Instrument Serif',serif;font-weight:400;font-size:158pt;line-height:.9;letter-spacing:-.04em;margin-left:-2mm}
 .coll{margin-top:0}
-.page.hero>.sec .row{padding:3.6mm 0}
-.page.hero>.sec .row .d{font-size:19pt}
-.page.hero>.sec .row .d.sm{font-size:8pt}
-.page.hero>.sec .row .n b{font-size:12.5pt}
-.page.hero>.sec .row .n i{font-size:13pt}
-.page.hero>.sec .row.slim{padding:3.2mm 0}
-.page.hero>.sec .row.slim .n b{font-size:12pt}
-.page.hero .badge{font-size:7pt;padding:1.2mm 3mm}
-.ctit{font-family:'Instrument Serif',serif;font-style:italic;font-size:36pt;line-height:1;letter-spacing:-.02em;margin-bottom:4mm;max-width:175mm}
-.ctx{font-size:11.5pt;line-height:1.5;max-width:150mm;font-weight:500}
+.ctit{font-family:'Instrument Serif',serif;font-style:italic;font-size:42pt;line-height:1;letter-spacing:-.02em;margin-bottom:5mm;max-width:175mm}
+.ctx{font-size:15pt;line-height:1.45;max-width:165mm;font-weight:500}
 
 /* painel da dica */
 .tip{background:var(--bg);color:var(--ink);padding:9mm 10mm;margin-top:8mm;flex:1;display:flex;flex-direction:column;justify-content:center;gap:6mm;min-height:52mm}
 .tip .stamp{align-self:flex-start}
-.tip p{font-family:'Instrument Serif',serif;font-size:21pt;line-height:1.14;letter-spacing:-.005em}
+.tip p{font-family:'Instrument Serif',serif;font-size:26pt;line-height:1.14;letter-spacing:-.005em}
 .tip strong{font-weight:400;font-style:italic;color:var(--accent);background:none}
 .second .tip{margin-bottom:6mm}
 
-/* dezembro (página única) */
-.single{padding:0}
-.single .top{padding:13mm 14mm 9mm;height:150mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
-.single .top .mname{font-size:150pt}
-.single .top .ctit{font-size:26pt}
-.single .top .ctx{font-size:10.5pt}
-.single .bottom{border-top:1.2mm solid #FF9ACB;flex:1;padding:2mm 14mm 14mm;display:flex;flex-direction:column;background:var(--bg);color:var(--ink)}
-.single .bottom .tip{margin-top:7mm;min-height:0}
-.single .bottom .tip .stamp{align-self:flex-start}
-.single .bottom .tip p{font-size:18pt !important}
 
 /* capa */
 .cover{background:#0B0B0B;color:#FFFFFF}
@@ -363,8 +313,8 @@ a{color:inherit;text-decoration:none}
 .ctitle .l2 .script{font-size:150pt;color:#FF9ACB;line-height:.78;margin-left:2mm}
 .ctitle .l3{font-family:'Anton',sans-serif;font-size:98pt;color:#FF9ACB;letter-spacing:.01em;line-height:.9;align-self:flex-end;margin-top:-14mm;margin-right:0}
 .cbottom{margin-top:10mm;border-top:.3mm solid rgba(255,241,230,.4);padding-top:6mm;display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;padding-bottom:6mm}
-.csub{font-family:'Instrument Serif',serif;font-size:17pt;line-height:1.1}
-.ctext{font-size:9.5pt;line-height:1.5;opacity:.85}
+.csub{font-family:'Instrument Serif',serif;font-size:20pt;line-height:1.1}
+.ctext{font-size:13pt;line-height:1.5;opacity:.85}
 
 /* apresentação */
 .intro{padding:0;flex-direction:row}
@@ -375,39 +325,41 @@ a{color:inherit;text-decoration:none}
   transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
 .h-big{font-family:'Instrument Serif',serif;font-weight:400;font-size:52pt;line-height:.98;letter-spacing:-.03em;margin-bottom:10mm}
 .h-big .script{font-size:60pt;color:#0B0B0B;letter-spacing:0}
-.intro .body p{font-size:11pt;line-height:1.55;margin-bottom:4.2mm;max-width:112mm}
-.intro .body p.lead{font-family:'Instrument Serif',serif;font-size:19pt;line-height:1.15;margin-bottom:5mm}
+.intro .body p{font-size:14pt;line-height:1.5;margin-bottom:4.5mm;max-width:122mm}
+.intro .body p.lead{font-family:'Instrument Serif',serif;font-size:21pt;line-height:1.15;margin-bottom:5mm}
 
 /* planejamento */
-.h-mid{font-family:'Instrument Serif',serif;font-weight:400;font-size:30pt;line-height:1;letter-spacing:-.025em;margin-bottom:4mm;max-width:165mm}
-.plan .two{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-bottom:5mm}
-.plan .two p{font-size:9.5pt;line-height:1.45}
-.ptable .ph,.ptable .pr{display:grid;grid-template-columns:42mm 62mm 1fr;gap:5mm;align-items:center}
-.ptable .ph{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 5mm 2mm}
-.ptable .pr{background:var(--bg);color:var(--ink);padding:2.8mm 5mm;margin-bottom:1.2mm}
+.h-mid{font-family:'Instrument Serif',serif;font-weight:400;font-size:27pt;line-height:1;letter-spacing:-.025em;margin-bottom:3.5mm;max-width:180mm}
+.plan .two{margin-bottom:4mm}
+.plan .two p{margin-bottom:2mm}
+.plan .two p{font-size:13pt;line-height:1.45}
+.ptable .ph,.ptable .pr{display:grid;grid-template-columns:36mm 54mm 1fr;gap:4mm;align-items:center}
+.ptable .ph{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 5mm 2mm}
+.ptable .pr{background:var(--bg);color:var(--ink);padding:2.2mm 5mm;margin-bottom:1mm}
 .pp{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;text-transform:uppercase}
-.pm{font-family:'Instrument Serif',serif;font-size:14.5pt;line-height:1.08}
-.pw{font-size:9.5pt;line-height:1.35;font-weight:500}
-.special{margin-top:5mm;display:grid;grid-template-columns:62mm 1fr;gap:8mm}
-.special h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:26pt;line-height:1;margin-bottom:3mm}
-.special .sphead p{font-size:9.5pt;line-height:1.45}
+.pm{font-family:'Instrument Serif',serif;font-size:16pt;line-height:1.08}
+.pw{font-size:13pt;line-height:1.35;font-weight:500}
+.special{margin-top:5mm;display:block}
+.special h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:26pt;line-height:1;margin-bottom:1.5mm}
+.special .sphead{margin-bottom:2.5mm}
+.special .sphead p{font-size:13pt;line-height:1.45}
 .special ul{list-style:none;border-top:.3mm solid rgba(11,11,11,.35)}
-.special li{display:grid;grid-template-columns:34mm 1fr;gap:3mm;padding:1.6mm 0;border-bottom:.3mm solid rgba(11,11,11,.35);font-size:9.5pt;line-height:1.35}
-.special li b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:11pt;letter-spacing:.02em}
-.note{background:#FF9ACB;padding:4.5mm 7mm;font-family:'Instrument Serif',serif;font-size:14pt;line-height:1.18;margin-top:5mm}
-.note b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:11pt;letter-spacing:.03em;margin-right:1mm}
+.special li{display:grid;grid-template-columns:42mm 1fr;gap:3mm;padding:1.3mm 0;border-bottom:.3mm solid rgba(11,11,11,.35);font-size:13pt;line-height:1.3}
+.special li b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.02em}
+.note{background:#FF9ACB;padding:3.5mm 6mm;font-family:'Instrument Serif',serif;font-size:15pt;line-height:1.16;margin-top:4mm}
+.note b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.03em;margin-right:1mm}
 
 /* checklist */
-.cintro{font-size:10pt;margin-bottom:4mm;max-width:150mm}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;flex:1;margin-bottom:4mm}
-.qcard{background:var(--bg);color:var(--ink);padding:5.5mm 6mm 4.5mm;display:flex;flex-direction:column}
-.qh{margin-bottom:3.5mm;display:flex;flex-direction:column;gap:1mm}
+.cintro{font-size:13pt;margin-bottom:3mm;max-width:175mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;flex:1;margin-bottom:3mm}
+.qcard{background:var(--bg);color:var(--ink);padding:4.5mm 5mm 4mm;display:flex;flex-direction:column}
+.qh{margin-bottom:2.5mm;display:flex;flex-direction:column;gap:1mm}
 .qt{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:21pt;line-height:1}
 .qp{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;color:var(--accent)}
-.qcard ul{list-style:none;display:flex;flex-direction:column;gap:2.2mm}
-.qcard li{display:flex;gap:3mm;font-size:9.5pt;line-height:1.35;font-weight:500}
+.qcard ul{list-style:none;display:flex;flex-direction:column;gap:1.7mm}
+.qcard li{display:flex;gap:3mm;font-size:13pt;line-height:1.28;font-weight:500}
 .qcard .box{flex:none;width:4mm;height:4mm;border:.45mm solid currentColor;margin-top:.3mm}
-.closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:13pt;line-height:1.2;max-width:170mm}
+.closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;line-height:1.15;max-width:180mm}
 
 /* cta */
 .h-huge{font-family:'Instrument Serif',serif;font-weight:400;font-size:46pt;line-height:.98;letter-spacing:-.03em;margin-bottom:9mm}
@@ -415,7 +367,7 @@ a{color:inherit;text-decoration:none}
 .cta .cluster{position:relative;height:66mm;margin-top:8mm}
 .cta .cluster .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB}
 .ctabody{columns:2;column-gap:8mm;margin-bottom:9mm}
-.ctabody p{font-size:10pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
+.ctabody p{font-size:13pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
 .ctabody strong{color:#0B0B0B;background:#FFFFFF;padding:0 1mm}
 .kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#0B0B0B}
 .btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#0B0B0B;color:#FF9ACB;padding:3.4mm 8mm 3mm;border:.45mm dotted #FF9ACB;outline:.45mm solid #0B0B0B;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
@@ -429,7 +381,7 @@ a{color:inherit;text-decoration:none}
 .back .stamps .stamp:nth-child(3){left:6mm;top:52mm;z-index:3}
 .brand{font-family:'Instrument Serif',serif;font-size:120pt;line-height:.9;letter-spacing:-.045em;margin-left:-2mm}
 .bt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20pt;line-height:1.1;margin:4mm 0 8mm;max-width:130mm}
-.links{display:flex;gap:4mm;align-items:center;font-size:9pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
+.links{display:flex;gap:4mm;align-items:center;font-size:10pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
 .links a{border-bottom:.35mm solid #FF9ACB}
 `;
 
