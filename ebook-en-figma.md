@@ -1,8 +1,8 @@
 # The 2027 Fashion Retail Calendar — English edition (Figma version)
 
-Text of the English e-book as it is laid out in Figma (file *Materiais ricos*, section `[EN E-BOOK] Calendário de Moda 2027`, node `2466:2`), page by page. Page numbers are the folios printed in the layout. Source copy: Google Doc "Fashion Calendar 2027 Ebook Copy Doc 1".
+Text of the English e-book as it is laid out in Figma (file *Materiais ricos*, section `[EN E-BOOK] Calendário de Moda 2027`, node `2466:2`), page by page (33 pages, like the PT edition). Page numbers are the folios printed in the layout. Source copy: Google Doc "Fashion Calendar 2027 Ebook Copy Doc 1".
 
-Not in the layout (no slot in the PT design): per-event "Why it matters", each month's "Theme" and "Context", weekdays in dates, and the 2027 at a glance chart.
+Not in the layout (no slot in the PT design): per-event "Why it matters", each month's "Theme" and "Context", weekdays in dates, and the "How to use" / "2027 at a glance" pages from the English doc (they have no PT counterpart).
 
 ---
 
@@ -20,57 +20,29 @@ Global Dates + U.S. and European Retail Moments · Planning Tips · Quarterly Ch
 
 ## Page 2 — Contents
 
-- **Introduction:** 03 How to use this calendar
-- **Month by month:** 07 January · 09 February · 12 March · 14 April · 16 May · 18 June · 20 July · 22 August · 24 September · 26 October · 28 November · 30 December
-- **Planning:** 32 Quarterly planning · 33 Quarterly checklist · 35 Your next step
+- **Introduction:** 03 Presentation
+- **Month by month:** 04 January · 06 February · 09 March · 11 April · 13 May · 15 June · 17 July · 19 August · 21 September · 23 October · 25 November · 27 December
+- **Planning:** 29 Quarterly planning · 30 Quarterly checklist · 32 Your next step
 
 ---
 
-## Page 3 — How to use
+## Page 3 — Presentation
 
-### One Calendar, Four Layers, Zero Guesswork
+### A whole year of opportunities starts with planning.
 
-Fashion runs on several clocks at once. Runways set trends months before shoppers see them, trade shows lock in what buyers will stock, and retail peaks decide when the money actually comes in.
+In fashion, being in the right moment makes all the difference. A trade show can anticipate trends, a fashion week can inspire a collection and a commercial date can represent a great sales opportunity.
 
-This calendar puts all of them together on one timeline for 2027, so buying, merchandising, marketing and e-commerce teams can plan from the same page.
+But to make the most of every market movement, you need to prepare in advance.
 
-How to read each date: every entry shows the event, the period, the location when there is one, and its status (Confirmed or Expected).
+With that in mind, we have gathered in this calendar the main dates that move the fashion industry around the world in 2027.
 
----
+This material was designed to help you make more informed decisions: plan purchases, organize inventory, anticipate campaigns and get your store ready for the most important moments of the year.
 
-## Page 4 — How to use: the four layers
-
-| Layer | What it tells you | Who uses it most |
-|---|---|---|
-| Fashion Weeks | Which trends and silhouettes will dominate the conversation | Content, social, merchandising |
-| Collections | When each season should launch, peak and clear | Buying, merchandising, e-commerce |
-| Trade Shows & Events | When buyers place orders and source materials | Buying, product, wholesale |
-| Retail Moments | When demand peaks and what shoppers are looking for | Marketing, growth, e-commerce |
+Share it with your team and keep a whole year of opportunities on your radar.
 
 ---
 
-## Page 5 — How to use: three ways to get the most out of it
-
-1. **Plan backward from the peak.** Each month page includes a "Start planning" note, so you know which dates need two weeks of prep and which need three months.
-2. **Pick your battles.** Not every date deserves a promotion. Use the big retail peaks for revenue, and the smaller moments for content, testing and brand building.
-3. **Plan the experience, not just the offer.** Peak dates bring gift buyers, first-time visitors and shoppers stepping into new categories. They all hesitate at the same point: choosing a size. Each month flags where that hesitation spikes, so you can fix it before the traffic arrives.
-
-**Note:** Dates marked Expected follow each organizer's usual window and may shift. Confirm before booking travel or locking media.
-
----
-
-## Page 6 — 2027 at a glance
-
-### Your Whole Year on One Page
-
-Read the year from top to bottom and you'll see the pattern: runways and trade shows set the agenda months before the retail peaks they feed. February's shows shape what sells in September, and September's shows shape next spring.
-
-Key reads for planners: Easter lands early (March 28), Prime Day now pulls a peak into June or July, and the stretch from Singles' Day (Nov 11) to Christmas is the most crowded six weeks of the year.
-
-*(Chart not designed yet.)*
-
----
-## Pages 7–8 — January (01 / 12)
+## Pages 4–5 — January (01 / 12)
 
 ### Fashion weeks
 
@@ -109,7 +81,7 @@ Your holiday returns are the best fit data you'll get all year. Pull return reas
 
 ---
 
-## Pages 9–11 — February (02 / 12)
+## Pages 6–8 — February (02 / 12)
 
 ### Fashion weeks
 
@@ -153,7 +125,7 @@ Valentine's Day falls on a Sunday, so Friday the 12th is your real delivery dead
 
 ---
 
-## Pages 12–13 — March (03 / 12)
+## Pages 9–10 — March (03 / 12)
 
 ### Fashion weeks
 
@@ -189,7 +161,7 @@ Shoppers are switching from coats to dresses, light jackets and early swim, and 
 
 ---
 
-## Pages 14–15 — April (04 / 12)
+## Pages 11–12 — April (04 / 12)
 
 ### Fashion weeks
 
@@ -217,7 +189,7 @@ Returns are the Earth Day story most brands miss. Every return adds another roun
 
 ---
 
-## Pages 16–17 — May (05 / 12)
+## Pages 13–14 — May (05 / 12)
 
 ### Retail & collection moments
 
@@ -241,7 +213,7 @@ Build one Mother's Day engine and run it in every market, swapping only the deli
 
 ---
 
-## Pages 18–19 — June (06 / 12)
+## Pages 15–16 — June (06 / 12)
 
 ### Fashion weeks
 
@@ -281,7 +253,7 @@ Treat late June as a peak, not a lull. Stack Father's Day, the first day of summ
 
 ---
 
-## Pages 20–21 — July (07 / 12)
+## Pages 17–18 — July (07 / 12)
 
 ### Fashion weeks
 
@@ -310,7 +282,7 @@ Use summer sales to clear stock, not to train shoppers to wait. Segment markdown
 
 ---
 
-## Pages 22–23 — August (08 / 12)
+## Pages 19–20 — August (08 / 12)
 
 ### Fashion weeks
 
@@ -342,7 +314,7 @@ Back to school speaks to two audiences: parents buying for kids and older studen
 
 ---
 
-## Pages 24–25 — September (09 / 12)
+## Pages 21–22 — September (09 / 12)
 
 ### Fashion weeks
 
@@ -379,7 +351,7 @@ Fall is where fit matters most and returns cost the most. A coat one size too sm
 
 ---
 
-## Pages 26–27 — October (10 / 12)
+## Pages 23–24 — October (10 / 12)
 
 ### Retail & collection moments
 
@@ -401,7 +373,7 @@ Black Friday brings a wave of first-time visitors who've never worn your sizes, 
 
 ---
 
-## Pages 28–29 — November (11 / 12)
+## Pages 25–26 — November (11 / 12)
 
 ### Retail & collection moments
 
@@ -426,7 +398,7 @@ Use Singles' Day as a dress rehearsal, then run Cyber Week in waves: early acces
 
 ---
 
-## Pages 30–31 — December (12 / 12)
+## Pages 27–28 — December (12 / 12)
 
 ### Retail & collection moments
 
@@ -452,7 +424,7 @@ With Christmas on a Saturday, shipping cutoffs land earlier than usual. Put last
 
 ---
 
-## Page 32 — Quarterly planning
+## Page 29 — Quarterly planning
 
 ### Your Quarter-Ahead Checklist
 
@@ -467,7 +439,7 @@ Run this checklist about eight weeks before each quarter starts. The first block
 
 ---
 
-## Pages 33–34 — Quarterly checklist
+## Pages 30–31 — Quarterly checklist
 
 ### Is Your Business Ready for the Next Quarter?
 
@@ -505,7 +477,7 @@ Use this checklist to review the key points of your operation's planning.
 
 ---
 
-## Page 35 — Your next step
+## Page 32 — Your next step
 
 ### The Dates Bring the Traffic. Confidence Closes the Sale.
 
@@ -519,7 +491,7 @@ Plan the experience alongside the promotions, and 2027 will reward both.
 
 ---
 
-## Page 36 — Back cover
+## Page 33 — Back cover
 
 Tailored solutions for your fashion e-commerce.
 
