@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The 2027 Fashion Retail Calendar — Sizebay</title>
+<style>
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;src:url('../fonts/Anton-400-normal.ttf') format('truetype');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;src:url('../fonts/InstrumentSans-400-normal.ttf') format('truetype');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;src:url('../fonts/InstrumentSans-500-normal.ttf') format('truetype');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:600;src:url('../fonts/InstrumentSans-600-normal.ttf') format('truetype');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:700;src:url('../fonts/InstrumentSans-700-normal.ttf') format('truetype');}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;src:url('../fonts/InstrumentSerif-400-italic.ttf') format('truetype');}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;src:url('../fonts/InstrumentSerif-400-normal.ttf') format('truetype');}
+@font-face{font-family:'Pinyon Script';font-style:normal;font-weight:400;src:url('../fonts/PinyonScript-400-normal.ttf') format('truetype');}
+@page { size: 210mm 297mm; margin: 0; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:#777;font-family:'Instrument Sans',sans-serif;color:#0B0B0B}
+a{color:inherit;text-decoration:none}
+.page{width:210mm;height:297mm;overflow:hidden;position:relative;display:flex;flex-direction:column;
+  padding:13mm 14mm 16mm;background:var(--bg);color:var(--ink);break-after:page;page-break-after:always}
+@media screen{.page{margin:8mm auto}}
+.spacer{flex:1}
+.script{font-family:'Pinyon Script',cursive;font-weight:400;letter-spacing:0}
+
+/* topo / rodapé */
+.run{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6mm}
+.folio{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+
+/* carimbo (tag rosa com borda pontilhada) */
+.stamp{display:inline-block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15pt;line-height:1;letter-spacing:.01em;
+  padding:1.6mm 4mm 1.4mm;background:var(--sbg);color:var(--sfg);border:.45mm dotted var(--sfg);transform:rotate(var(--r,-1.5deg));transform-origin:left center;position:relative}
+.stamp.big{font-size:50pt;padding:2mm 5mm 1.6mm;letter-spacing:-.015em;position:absolute;white-space:nowrap;background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B}
+.stampwrap{margin-bottom:4mm;padding-left:1mm}
+
+/* linhas (eventos / datas) */
+.sec{margin-top:5.5mm}
+.sec>.stamp{margin-bottom:3mm;margin-left:1mm}
+.rows{border-top:1.2mm solid #FF9ACB}
+.row{display:grid;grid-template-columns:34mm 1fr auto;align-items:center;gap:3mm;padding:1.9mm 0;border-bottom:.3mm solid color-mix(in srgb,var(--ink) 35%,transparent)}
+.row .d{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;letter-spacing:.01em}
+.row .d.sm{font-family:'Instrument Sans';font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.row .d.dot span{display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;background:currentColor}
+.row .n{display:block}
+.row .n b{font-weight:600;font-size:14pt;line-height:1.2}
+.row .n i{white-space:nowrap;font-family:'Instrument Serif',serif;font-size:14pt;line-height:1.2;opacity:.85}
+.row.slim{padding:1.9mm 0}
+.row.slim{grid-template-columns:34mm 1fr}
+.row.slim .n b{font-weight:500;font-size:14pt}
+.badge{font-size:8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:10mm;border:.35mm solid currentColor;white-space:nowrap}
+.badge.ok{background:#FF9ACB;color:#0B0B0B;border-color:#FF9ACB}
+.badge.an{border-style:dashed}
+
+/* hero de mês */
+.mhead{margin-top:2mm}
+.mtop{display:flex;align-items:flex-end;gap:5mm;margin-bottom:2mm;position:relative;z-index:2}
+.num{font-family:'Anton',sans-serif;font-size:30pt;line-height:1}
+.yr{font-size:40pt;line-height:.9;color:var(--accent);transform:rotate(-5deg);display:inline-block;margin-bottom:-1mm}
+.mname{font-family:'Instrument Serif',serif;font-weight:400;font-size:158pt;line-height:.9;letter-spacing:-.04em;margin-left:-2mm}
+.coll{margin-top:0}
+.ctit{font-family:'Instrument Serif',serif;font-style:italic;font-size:42pt;line-height:1;letter-spacing:-.02em;margin-bottom:5mm;max-width:175mm}
+.ctx{font-size:15pt;line-height:1.45;max-width:165mm;font-weight:500}
+
+/* painel da dica */
+.tip{background:var(--bg);color:var(--ink);padding:9mm 10mm;margin-top:8mm;flex:1;display:flex;flex-direction:column;justify-content:center;gap:6mm;min-height:52mm}
+.tip .stamp{align-self:flex-start}
+.tip p{font-family:'Instrument Serif',serif;font-size:26pt;line-height:1.14;letter-spacing:-.005em}
+.tip strong{font-weight:400;font-style:italic;color:var(--accent);background:none}
+.second .tip{margin-bottom:6mm}
+
+
+/* capa */
+.cover{background:#0B0B0B;color:#FFFFFF}
+.cover .cluster{position:relative;height:92mm;margin-top:10mm}
+.ctitle{font-weight:400;display:flex;flex-direction:column;line-height:.9}
+.ctitle .l1{font-family:'Instrument Serif',serif;font-size:104pt;letter-spacing:-.04em;margin-left:-1.5mm}
+.ctitle .l2{display:flex;align-items:flex-end;gap:2mm;margin-top:-4mm;height:42mm}
+.ctitle .l2 em{font-family:'Instrument Serif',serif;font-style:italic;font-size:34pt;margin-bottom:11mm}
+.ctitle .l2 .script{font-size:150pt;color:#FF9ACB;line-height:.78;margin-left:2mm}
+.ctitle .l3{font-family:'Anton',sans-serif;font-size:98pt;color:#FF9ACB;letter-spacing:.01em;line-height:.9;align-self:flex-end;margin-top:-14mm;margin-right:0}
+.cbottom{margin-top:10mm;border-top:.3mm solid rgba(255,241,230,.4);padding-top:6mm;display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;padding-bottom:6mm}
+.csub{font-family:'Instrument Serif',serif;font-size:20pt;line-height:1.1}
+.ctext{font-size:13pt;line-height:1.5;opacity:.85}
+
+/* apresentação */
+.intro{padding:0;flex-direction:row}
+.intro .inner{flex:1;padding:13mm 12mm 12mm 14mm;display:flex;flex-direction:column;position:relative}
+.intro .folio{left:14mm;right:12mm}
+.intro .band{width:42mm;background:#0B0B0B;color:#FF9ACB;overflow:hidden;position:relative;flex:none}
+.intro .band span{position:absolute;top:100%;left:0;white-space:nowrap;font-family:'Anton',sans-serif;font-size:36pt;text-transform:uppercase;letter-spacing:.01em;line-height:42mm;
+  transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
+.h-big{font-family:'Instrument Serif',serif;font-weight:400;font-size:52pt;line-height:.98;letter-spacing:-.03em;margin-bottom:10mm}
+.h-big .script{font-size:60pt;color:#0B0B0B;letter-spacing:0}
+.intro .body p{font-size:14pt;line-height:1.5;margin-bottom:4.5mm;max-width:122mm}
+.intro .body p.lead{font-family:'Instrument Serif',serif;font-size:21pt;line-height:1.15;margin-bottom:5mm}
+
+/* planejamento */
+.h-mid{font-family:'Instrument Serif',serif;font-weight:400;font-size:27pt;line-height:1;letter-spacing:-.025em;margin-bottom:3.5mm;max-width:180mm}
+.plan .two{margin-bottom:4mm}
+.plan .two p{margin-bottom:2mm}
+.plan .two p{font-size:13pt;line-height:1.45}
+.ptable .ph,.ptable .pr{display:grid;grid-template-columns:36mm 54mm 1fr;gap:4mm;align-items:center}
+.ptable .ph{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 5mm 2mm}
+.ptable .pr{background:var(--bg);color:var(--ink);padding:2.2mm 5mm;margin-bottom:1mm}
+.pp{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;text-transform:uppercase}
+.pm{font-family:'Instrument Serif',serif;font-size:16pt;line-height:1.08}
+.pw{font-size:13pt;line-height:1.35;font-weight:500}
+.special{margin-top:5mm;display:block}
+.special h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:26pt;line-height:1;margin-bottom:1.5mm}
+.special .sphead{margin-bottom:2.5mm}
+.special .sphead p{font-size:13pt;line-height:1.45}
+.special ul{list-style:none;border-top:.3mm solid rgba(11,11,11,.35)}
+.special li{display:grid;grid-template-columns:42mm 1fr;gap:3mm;padding:1.3mm 0;border-bottom:.3mm solid rgba(11,11,11,.35);font-size:13pt;line-height:1.3}
+.special li b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.02em}
+.note{background:#FF9ACB;padding:3.5mm 6mm;font-family:'Instrument Serif',serif;font-size:15pt;line-height:1.16;margin-top:4mm}
+.note b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:13pt;letter-spacing:.03em;margin-right:1mm}
+
+/* checklist */
+.cintro{font-size:13pt;margin-bottom:3mm;max-width:175mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;flex:1;margin-bottom:3mm}
+.qcard{background:var(--bg);color:var(--ink);padding:4.5mm 5mm 4mm;display:flex;flex-direction:column}
+.qh{margin-bottom:2.5mm;display:flex;flex-direction:column;gap:1mm}
+.qt{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:21pt;line-height:1}
+.qp{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;color:var(--accent)}
+.qcard ul{list-style:none;display:flex;flex-direction:column;gap:1.7mm}
+.qcard li{display:flex;gap:3mm;font-size:13pt;line-height:1.28;font-weight:500}
+.qcard .box{flex:none;width:4mm;height:4mm;border:.45mm solid currentColor;margin-top:.3mm}
+.closing{font-family:'Instrument Serif',serif;font-style:italic;font-size:14pt;line-height:1.15;max-width:180mm}
+
+/* cta */
+.h-huge{font-family:'Instrument Serif',serif;font-weight:400;font-size:46pt;line-height:.98;letter-spacing:-.03em;margin-bottom:9mm}
+.h-huge .script{font-size:54pt;color:#0B0B0B;letter-spacing:0}
+.cta .cluster{position:relative;height:66mm;margin-top:8mm}
+.cta .cluster .stamp{background:#0B0B0B;color:#FF9ACB;border-color:#FF9ACB}
+.ctabody{columns:2;column-gap:8mm;margin-bottom:9mm}
+.ctabody p{font-size:13pt;line-height:1.5;margin-bottom:3.5mm;break-inside:avoid;opacity:.92}
+.ctabody strong{color:#0B0B0B;background:#FFFFFF;padding:0 1mm}
+.kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:22pt;line-height:1.1;margin-bottom:7mm;color:#0B0B0B}
+.btn{align-self:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16pt;letter-spacing:.04em;background:#0B0B0B;color:#FF9ACB;padding:3.4mm 8mm 3mm;border:.45mm dotted #FF9ACB;outline:.45mm solid #0B0B0B;outline-offset:1.2mm;margin-bottom:12mm;transform:rotate(-1deg)}
+
+/* contracapa */
+.back{background:#0B0B0B;color:#FF9ACB}
+.back .stamps{position:relative;height:90mm;margin-top:6mm}
+.back .stamps .stamp{background:#FF9ACB;color:#0B0B0B;border-color:#0B0B0B;position:absolute}
+.back .stamps .stamp:nth-child(1){left:0;top:0}
+.back .stamps .stamp:nth-child(2){left:36mm;top:26mm;z-index:2}
+.back .stamps .stamp:nth-child(3){left:6mm;top:52mm;z-index:3}
+.brand{font-family:'Instrument Serif',serif;font-size:120pt;line-height:.9;letter-spacing:-.045em;margin-left:-2mm}
+.bt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20pt;line-height:1.1;margin:4mm 0 8mm;max-width:130mm}
+.links{display:flex;gap:4mm;align-items:center;font-size:10pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6mm}
+.links a{border-bottom:.35mm solid #FF9ACB}
+
+/* --- EN edition additions --- */
+.row{grid-template-columns:36mm 1fr auto;align-items:start}
+.row .d{font-size:15pt;padding-top:.6mm}
+.row .d small{display:block;font-family:'Instrument Sans';font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:.8mm}
+.row .d.sm{font-size:8pt;padding-top:1.2mm}
+.row .n b{font-size:12.5pt}
+.row .n i{white-space:normal;font-size:12.5pt}
+.row .n .why{display:block;font-size:9.5pt;line-height:1.3;font-weight:500;opacity:.8;margin-top:.6mm}
+.row .badge{margin-top:.8mm}
+.badge.pr{background:transparent}
+.sec{margin-top:4.5mm}
+.mhead{margin-top:0}
+.theme{font-family:'Instrument Serif',serif;font-style:italic;font-size:21pt;line-height:1.05;margin:1mm 0 2.5mm;color:var(--accent)}
+.mctx{font-size:10.5pt;line-height:1.42;font-weight:500;max-width:172mm}
+.second .sec:first-of-type{margin-top:0}
+.second .coll .ctit{margin-top:3mm;font-size:34pt}
+.second .coll .ctx{margin-bottom:4mm;font-size:13pt}
+.tip p{font-size:24pt}
+.coll .rows{margin-top:2mm}
+.howto .hread{font-size:11.5pt;line-height:1.4;margin:3mm 0 2mm}
+.howto .special li{grid-template-columns:62mm 1fr;font-size:11.5pt;line-height:1.35}
+.howto .special li b{font-size:12pt}
+.howto .pr .pm,.howto .pr .pw{font-size:12.5pt}
+.howto .pp{font-size:14pt}
+.howto .ptable .ph,.howto .ptable .pr{grid-template-columns:40mm 62mm 1fr}
+/* glance */
+.gtext{font-size:12.5pt;line-height:1.45;max-width:172mm;margin-bottom:6mm}
+.gcap{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:2.5mm;color:#FF9ACB}
+.gridmap{display:grid;grid-template-columns:26mm repeat(12,1fr);gap:1mm}
+.gc{height:15mm;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:16pt}
+.gc.gh{height:7mm;font-family:'Instrument Sans';font-size:8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.gc.gl{justify-content:flex-start;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:11.5pt;letter-spacing:.02em;line-height:1.05}
+.gc.l0{border:.3mm solid rgba(255,255,255,.25)}
+.gc.l1{background:#FFD3E9;color:#0B0B0B}
+.gc.l2{background:#FF9ACB;color:#0B0B0B}
+.gc.l3{background:#FFFFFF;color:#0B0B0B}
+.gkey{display:flex;align-items:center;gap:2mm;margin-top:3mm;font-size:8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.gkey span{margin-right:2mm}
+.gkey .k{display:inline-block;width:5mm;height:5mm;margin-left:2mm}
+.gkey .k.l1{background:#FFD3E9}.gkey .k.l2{background:#FF9ACB}.gkey .k.l3{background:#FFFFFF}
+.reads h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:24pt;margin-bottom:3mm}
+.rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:6mm}
+.rc{background:var(--bg);color:var(--ink);padding:5mm;display:flex;flex-direction:column;gap:2mm;min-height:38mm;justify-content:space-between}
+.rc b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:15pt;line-height:1.05}
+.rc span{font-family:'Instrument Serif',serif;font-size:17pt;line-height:1.05}
+/* contents */
+.contents{padding:0;flex-direction:row}
+.contents .inner{flex:1;padding:13mm 12mm 12mm 14mm;display:flex;flex-direction:column;position:relative}
+.contents .folio{left:14mm;right:12mm}
+.contents .band{width:42mm;background:#0B0B0B;color:#FF9ACB;overflow:hidden;position:relative;flex:none}
+.contents .band span{position:absolute;white-space:nowrap;font-family:'Anton',sans-serif;font-size:36pt;text-transform:uppercase;letter-spacing:.01em;line-height:42mm;transform-origin:0 0;transform:rotate(-90deg);top:297mm;width:297mm;display:block}
+.contents .h-big{margin-bottom:8mm}
+.toc{border-top:1.2mm solid #0B0B0B}
+.tr{display:flex;justify-content:space-between;align-items:baseline;padding:2.1mm 0;border-bottom:.3mm solid rgba(11,11,11,.4)}
+.tn{font-family:'Instrument Serif',serif;font-size:19pt;line-height:1.1}
+.tp{font-family:'Anton',sans-serif;font-size:15pt}
+/* quarter table */
+.qtable{display:flex;flex-direction:column;gap:2mm;margin-top:4mm;flex:1;margin-bottom:6mm}
+.qr{background:var(--bg);color:var(--ink);padding:5mm 5mm;display:grid;grid-template-columns:20mm 1fr;gap:3mm 5mm;flex:1;align-content:center}
+.qa{grid-row:1 / span 3;display:flex;flex-direction:column}
+.q1{font-family:'Anton',sans-serif;font-size:32pt;line-height:1}
+.q2{font-family:'Instrument Serif',serif;font-style:italic;font-size:13pt;color:var(--accent)}
+.qb,.qc,.qd{display:grid;grid-template-columns:38mm 1fr;gap:3mm;font-size:11pt;line-height:1.3;align-items:baseline}
+.qr em{font-style:normal;font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.qb b{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:14pt}
+.qc span,.qd span{font-weight:500}
+.qplan .two p{font-size:12.5pt}
+/* cta extras */
+.ctabody p{font-size:11.5pt;line-height:1.45}
+.loop{font-size:10pt;line-height:1.45;margin-bottom:12mm;max-width:150mm}
+.loop b{letter-spacing:.06em}
+.btn{margin-bottom:8mm}
+.cta .cluster{height:62mm}
+.h-huge{font-size:40pt}
+.h-huge .script{font-size:48pt}
+.cover .ctitle .l2 .script{font-size:76pt;line-height:.9;margin-bottom:-1mm}
+.cover .ctitle .l3{margin-top:-4mm}
+.mname{padding-bottom:2.5mm}
+.theme{color:var(--ink)}
+.second.dense .tip p{font-size:18pt}
+.second.dense .tip{min-height:0;padding:7mm 9mm;gap:4mm}
+.second.dense .coll .ctit{font-size:28pt}
+.howto .two p{font-size:12pt;line-height:1.4}
+.howto .ptable .pr{padding:1.6mm 5mm}
+.howto .special li{padding:1mm 0}
+.howto .special{margin-top:3mm}
+.howto .note{margin-top:2mm;font-size:13pt}
+</style></head>
+<body>
+<section class="page cover">
+  <header class="run"><span>Sizebay</span><span>E-book · 2027 Edition</span></header>
+  <div class="cluster">
+    <span class="stamp big" style="--r:-2.2deg;left:0;top:0;z-index:1">Fashion weeks</span>
+    <span class="stamp big" style="--r:1.6deg;left:70mm;top:20mm;z-index:2">Collections</span>
+    <span class="stamp big" style="--r:-1.1deg;left:6mm;top:42mm;z-index:3">Trade shows</span>
+    <span class="stamp big" style="--r:2.1deg;left:62mm;top:63mm;z-index:4">Retail peaks</span>
+  </div>
+  <div class="spacer"></div>
+  <h1 class="ctitle">
+    <span class="l1">Fashion</span>
+    <span class="l2"><em>retail</em><span class="script">Calendar</span></span>
+    <span class="l3">2027</span>
+  </h1>
+  <div class="cbottom">
+    <p class="csub">Every fashion week, collection window, trade show and sales peak in one plan, built for teams who sell fashion online.</p>
+    <p class="ctext">Global Dates + U.S. and European Retail Moments  ·  Planning Tips  ·  Quarterly Checklist</p>
+  </div>
+</section>
+
+<section class="page contents" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <div class="band"><span>The 2027 Fashion Retail Calendar · The 2027 Fashion Retail Calendar · The 2027 Fashion Retail Calendar</span></div>
+  <div class="inner">
+    <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>Contents</span></header>
+    <div class="stampwrap"><span class="stamp" style="--r:-1.6deg">Contents</span></div>
+    <h2 class="h-big">What's <span class="script">inside</span></h2>
+    <div class="toc">
+      <div class="tr"><span class="tn">How to use this calendar</span><span class="tp">03</span></div><div class="tr"><span class="tn">2027 at a glance</span><span class="tp">04</span></div><div class="tr"><span class="tn">January</span><span class="tp">05</span></div><div class="tr"><span class="tn">February</span><span class="tp">07</span></div><div class="tr"><span class="tn">March</span><span class="tp">09</span></div><div class="tr"><span class="tn">April</span><span class="tp">11</span></div><div class="tr"><span class="tn">May</span><span class="tp">13</span></div><div class="tr"><span class="tn">June</span><span class="tp">15</span></div><div class="tr"><span class="tn">July</span><span class="tp">17</span></div><div class="tr"><span class="tn">August</span><span class="tp">19</span></div><div class="tr"><span class="tn">September</span><span class="tp">21</span></div><div class="tr"><span class="tn">October</span><span class="tp">23</span></div><div class="tr"><span class="tn">November</span><span class="tp">25</span></div><div class="tr"><span class="tn">December</span><span class="tp">27</span></div><div class="tr"><span class="tn">Quarterly planning checklist</span><span class="tp">29</span></div><div class="tr"><span class="tn">Your next step</span><span class="tp">31</span></div>
+    </div>
+    <footer class="folio"><span>Sizebay</span><span>02</span></footer>
+  </div>
+</section>
+
+<section class="page plan howto" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>How to use this calendar</span></header>
+  <div class="stampwrap"><span class="stamp" style="--r:-1.6deg">How to use</span></div>
+  <h2 class="h-mid">One Calendar, Four Layers, Zero Guesswork</h2>
+  <div class="two"><p>Fashion runs on several clocks at once. Runways set trends months before shoppers see them, trade shows lock in what buyers will stock, and retail peaks decide when the money actually comes in. This calendar puts all of them together on one timeline for 2027, so buying, merchandising, marketing and e-commerce teams can plan from the same page.</p></div>
+  <div class="ptable">
+    <div class="ph"><span>Layer</span><span>What it tells you</span><span>Who uses it most</span></div>
+    <div class="pr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="pp">Fashion Weeks</div><div class="pm">Which trends and silhouettes will dominate the conversation</div><div class="pw">Content, social, merchandising</div></div><div class="pr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="pp">Collections</div><div class="pm">When each season should launch, peak and clear</div><div class="pw">Buying, merchandising, e-commerce</div></div><div class="pr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="pp">Trade Shows &amp; Events</div><div class="pm">When buyers place orders and source materials</div><div class="pw">Buying, product, wholesale</div></div><div class="pr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="pp">Retail Moments</div><div class="pm">When demand peaks and what shoppers are looking for</div><div class="pw">Marketing, growth, e-commerce</div></div>
+  </div>
+  <p class="hread"><b>How to read each date.</b> Every entry shows the event, the period, the location when there is one, its status (Confirmed or Expected) and a one-line "why it matters" for anyone buying, selling or planning campaigns.</p>
+  <div class="special">
+    <div class="sphead"><h3>Three ways to get the most out of it:</h3></div>
+    <ul><li><b>Plan backward from the peak.</b><span>Each month page includes a "Start planning" note, so you know which dates need two weeks of prep and which need three months.</span></li><li><b>Pick your battles.</b><span>Not every date deserves a promotion. Use the big retail peaks for revenue, and the smaller moments for content, testing and brand building.</span></li><li><b>Plan the experience, not just the offer.</b><span>Peak dates bring gift buyers, first-time visitors and shoppers stepping into new categories. They all hesitate at the same point: choosing a size. Each month flags where that hesitation spikes, so you can fix it before the traffic arrives.</span></li></ul>
+  </div>
+  <div class="spacer"></div>
+  <div class="note"><b>Note:</b> Dates marked Expected follow each organizer's usual window and may shift. Confirm before booking travel or locking media.</div>
+  <footer class="folio"><span>Sizebay</span><span>03</span></footer>
+</section>
+
+<section class="page glance" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>2027 at a glance</span></header>
+  <div class="stampwrap"><span class="stamp" style="--r:1.1deg">2027 at a glance</span></div>
+  <h2 class="h-mid">Your Whole Year on One Page</h2>
+  <p class="gtext">Read the year from top to bottom and you'll see the pattern: runways and trade shows set the agenda months before the retail peaks they feed. February's shows shape what sells in September, and September's shows shape next spring.</p>
+  <div class="gcap">2027 at a glance · four layers, Jan to Dec</div>
+  <div class="gridmap">
+    <div class="gc gh"></div><div class="gc gh">Jan</div><div class="gc gh">Feb</div><div class="gc gh">Mar</div><div class="gc gh">Apr</div><div class="gc gh">May</div><div class="gc gh">Jun</div><div class="gc gh">Jul</div><div class="gc gh">Aug</div><div class="gc gh">Sep</div><div class="gc gh">Oct</div><div class="gc gh">Nov</div><div class="gc gh">Dec</div>
+    <div class="gc gl">Fashion weeks</div><div class="gc l2">4</div><div class="gc l2">4</div><div class="gc l1">1</div><div class="gc l1">1</div><div class="gc l0"></div><div class="gc l2">3</div><div class="gc l1">2</div><div class="gc l1">1</div><div class="gc l2">4</div><div class="gc l0"></div><div class="gc l0"></div><div class="gc l0"></div><div class="gc gl">Collections</div><div class="gc l1">1</div><div class="gc l1">1</div><div class="gc l1">2</div><div class="gc l1">1</div><div class="gc l1">1</div><div class="gc l1">2</div><div class="gc l1">1</div><div class="gc l1">1</div><div class="gc l1">2</div><div class="gc l1">1</div><div class="gc l1">1</div><div class="gc l1">2</div><div class="gc gl">Trade shows</div><div class="gc l2">4</div><div class="gc l3">6</div><div class="gc l1">1</div><div class="gc l0"></div><div class="gc l0"></div><div class="gc l2">3</div><div class="gc l0"></div><div class="gc l1">1</div><div class="gc l1">2</div><div class="gc l0"></div><div class="gc l0"></div><div class="gc l0"></div><div class="gc gl">Retail moments</div><div class="gc l2">3</div><div class="gc l2">4</div><div class="gc l3">5</div><div class="gc l2">4</div><div class="gc l3">6</div><div class="gc l3">5</div><div class="gc l2">4</div><div class="gc l1">2</div><div class="gc l1">2</div><div class="gc l2">4</div><div class="gc l3">7</div><div class="gc l3">7</div>
+  </div>
+  <div class="gkey"><span>Entries per month</span><i class="k l1"></i>1–2<i class="k l2"></i>3–4<i class="k l3"></i>5+</div>
+  <div class="spacer"></div>
+  <div class="reads">
+    <h3>Key reads for planners</h3>
+    <div class="rcards">
+      <div class="rc" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB"><b>Easter lands early</b><span>March 28</span></div><div class="rc" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B"><b>Prime Day now pulls a peak</b><span>into June or July</span></div><div class="rc" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB"><b>The most crowded six weeks of the year</b><span>Singles' Day (Nov 11) to Christmas</span></div>
+    </div>
+  </div>
+  <footer class="folio"><span>Sizebay</span><span>04</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>01 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">01</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">January</h2>
+  </div>
+  <p class="theme">Clear Winter, Read the Returns, Set the Year's Trends</p>
+  <p class="mctx">January runs on three tracks. Shoppers come back with gift cards and a reset mindset, Europe's regulated winter sales open, and the Fall/Winter 2027 menswear and couture shows start the trend conversation. It's also the month your holiday returns arrive, which makes it the best fit-data moment of the year.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d ">Jan 15–19</div>
+        <div class="n"><b>Milan Fashion Week Men's</b> <i>· Milan</i><span class="why">FW27 menswear trends</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 19–24</div>
+        <div class="n"><b>Paris Fashion Week Men's</b> <i>· Paris</i><span class="why">FW27 menswear; the most-covered men's week</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 25–28</div>
+        <div class="n"><b>Paris Haute Couture Week</b> <i>· Paris</i><span class="why">Spring/Summer 2027 couture; premium storytelling and red-carpet trends</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 29–Feb 1</div>
+        <div class="n"><b>Berlin Fashion Week</b> <i>· Berlin</i><span class="why">Emerging and sustainable labels</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d ">Jan 12–15</div>
+        <div class="n"><b>Pitti Immagine Uomo</b> <i>· Florence</i><span class="why">Opens the FW27 menswear buying season</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 16–18</div>
+        <div class="n"><b>Who's Next + Salon International de la Lingerie</b> <i>· Paris</i><span class="why">Contemporary womenswear, accessories and lingerie buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 20–21</div>
+        <div class="n"><b>Pitti Immagine Bimbo</b> <i>· Florence</i><span class="why">Kidswear buying for FW27</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 26–28</div>
+        <div class="n"><b>Première Vision Paris</b> <i>· Paris</i><span class="why">Fabrics and materials for FW28; earlier than usual this year</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  
+  <footer class="folio"><span>Sizebay</span><span>05</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>January · continued</span></header>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Jan 1<small>Fri</small></div>
+        <div class="n"><b>New Year's Day</b> <i>· Global</i><span class="why">Resolution shoppers replace worn-out basics and activewear; gift cards come out</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jan 1–15</div>
+        <div class="n"><b>Holiday returns peak</b> <i>· U.S., Europe</i><span class="why">Return reasons show exactly which products confused shoppers on size in Q4</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Jan 18<small>Mon</small></div>
+        <div class="n"><b>MLK Day weekend</b> <i>· U.S.</i><span class="why">Long-weekend clearance push</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Fall/Winter 2027</p>
+    <p class="ctx">The men's and couture shows open the FW27 trend conversation that buyers will follow all season. In stores, the first Spring/Summer 2027 drops land next to clearance, which makes this a good moment for transitional pieces.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Jan</div>
+        <div class="n"><b>First Spring/Summer 2027 drops</b> <i>· Global</i><span class="why">New-season teasers sit beside clearance; a good moment for transitional pieces</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Your holiday returns are the best fit data you'll get all year. Pull return reasons by product and fix the worst offenders before Valentine's Day. Then add clear size guidance to clearance items, where shoppers tend to buy the size they can find instead of the one that fits.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>06</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>02 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">02</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:70pt">February</h2>
+  </div>
+  <p class="theme">Romance, Runways and the Start of Spring Buying</p>
+  <p class="mctx">February is the busiest runway month of the year, with all four Fall/Winter 2027 womenswear weeks starting within three weeks. On the retail side, Lunar New Year and Valentine's Day create two clear gifting deadlines.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d ">Feb 1–5</div>
+        <div class="n"><b>Copenhagen Fashion Week</b> <i>· Copenhagen</i><span class="why">The "fifth fashion week"; Scandinavian minimalism and sustainability leadership</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 8–12</div>
+        <div class="n"><b>New York Fashion Week</b> <i>· New York</i><span class="why">Opens the FW27 womenswear season; the most commercial of the big four</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Feb 18–22</div>
+        <div class="n"><b>London Fashion Week</b> <i>· London</i><span class="why">Experimental, emerging talent</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Feb 23–Mar 1</div>
+        <div class="n"><b>Milan Fashion Week Women's</b> <i>· Milan</i><span class="why">Luxury, tailoring and Italian heritage houses</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d ">Feb 2–4</div>
+        <div class="n"><b>CIFF</b> <i>· Copenhagen</i><span class="why">Nordic contemporary and kidswear buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 4–6</div>
+        <div class="n"><b>Momad</b> <i>· Madrid</i><span class="why">Spanish market buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 7–9</div>
+        <div class="n"><b>Coterie</b> <i>· New York</i><span class="why">Contemporary womenswear buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 16–18</div>
+        <div class="n"><b>MAGIC, Project and Sourcing at MAGIC</b> <i>· Las Vegas</i><span class="why">The largest U.S. fashion buying event</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 16–18</div>
+        <div class="n"><b>Scoop</b> <i>· London</i><span class="why">Curated contemporary brands for UK buyers</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 21–23</div>
+        <div class="n"><b>MICAM Milano</b> <i>· Milan</i><span class="why">The world's largest footwear fair</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  
+  <footer class="folio"><span>Sizebay</span><span>07</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>February · continued</span></header>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Feb 6<small>Sat</small></div>
+        <div class="n"><b>Lunar New Year</b> <i>· Global</i><span class="why">Red and gold, festive outfits and family gifting; plan shipping before the date</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 13<small>Sat</small></div>
+        <div class="n"><b>Galentine's Day</b> <i>· U.S., UK</i><span class="why">Friend-to-friend gifting and shareable content</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 14<small>Sun</small></div>
+        <div class="n"><b>Valentine's Day</b> <i>· Global</i><span class="why">Lingerie, accessories and gifting; falls on a Sunday, so Friday the 12th is the real delivery deadline</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Feb 15<small>Mon</small></div>
+        <div class="n"><b>Presidents' Day weekend</b> <i>· U.S.</i><span class="why">First big sale weekend of the year; last winter clearance or early spring at a promo price</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Fall/Winter 2027 Runways</p>
+    <p class="ctx">All four big womenswear weeks start within three weeks of each other, setting the references brands and buyers will work with for the rest of the year. Late in the month, the Spring/Summer 2027 launch begins as dresses and light jackets start replacing outerwear.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Feb</div>
+        <div class="n"><b>Spring/Summer 2027 main launch begins</b> <i>· Global</i><span class="why">Dresses, light jackets and early swim start replacing outerwear</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Valentine's Day falls on a Sunday, so Friday the 12th is your real delivery deadline. Put the order-by date on every product page, then switch to gift cards and express shipping once it passes. Gift buyers rarely know the recipient's size, so simple size guidance and easy exchanges help them go beyond a scarf.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>08</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>03 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">03</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">March</h2>
+  </div>
+  <p class="theme">Spring Arrives Early</p>
+  <p class="mctx">Easter falls on March 28 in 2027, almost a month earlier than in 2026 (April 5 in 2026). That pulls pastel, occasion and family-outfit demand into March and squeezes the spring launch window. Paris closes the FW27 shows, and Mother's Day arrives first in the UK.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d ">Mar 1–9</div>
+        <div class="n"><b>Paris Fashion Week Women's</b> <i>· Paris</i><span class="why">Closes FW27; the most influential womenswear week</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d ">Mar 10–12</div>
+        <div class="n"><b>Intertextile Apparel Fabrics + CHIC</b> <i>· Shanghai</i><span class="why">Sourcing and Asian market buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Mar 7<small>Sun</small></div>
+        <div class="n"><b>Mothering Sunday</b> <i>· UK</i><span class="why">First Mother's Day of the year; UK campaigns need to be live in February</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Mar 8<small>Mon</small></div>
+        <div class="n"><b>International Women's Day</b> <i>· Global</i><span class="why">Purpose-led campaigns; back them with a shopping experience that respects real bodies</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Mar 17<small>Wed</small></div>
+        <div class="n"><b>St. Patrick's Day</b> <i>· U.S., UK, Ireland</i><span class="why">Playful "wear green" edits and flash offers</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Mar 19<small>Fri</small></div>
+        <div class="n"><b>Father's Day</b> <i>· Italy, Spain</i><span class="why">Menswear gifting in Southern Europe, three months before the U.S. and UK</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Mar 26–29</div>
+        <div class="n"><b>Easter weekend (Easter Sunday Mar 28)</b> <i>· U.S., Europe</i><span class="why">Pastels, brunch dresses, kidswear and matching family looks</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>09</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>March · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Spring/Summer 2027 Full Launch</p>
+    <p class="ctx">Easter falls on March 28, about a week earlier than in 2026, so pastel and occasion demand arrives sooner and the launch window gets tighter. New styles go live with no reviews or fit history yet.</p>
+    <div class="rows"><div class="row">
+        <div class="d ">Mar 20<small>Sat</small></div>
+        <div class="n"><b>First day of spring</b> <i>· Northern Hemisphere</i><span class="why">Natural hook for the full Spring/Summer launch</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Spring/Summer 2027 full launch</b> <i>· Global</i><span class="why">New styles with no reviews or fit history yet</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Shoppers are switching from coats to dresses, light jackets and early swim, and most don't remember how your sizing runs in those categories. With new styles launching at zero reviews, a reliable size recommendation and a way to see the piece on the body do the work social proof can't do yet.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>10</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>04 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">04</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">April</h2>
+  </div>
+  <p class="theme">Purpose, Play and the Warm-Weather Ramp</p>
+  <p class="mctx">With Easter already behind you, April is a clean month for brand-building. Earth Day and Fashion Revolution Week make it the natural moment for sustainability stories, festival season opens in the U.S., and swimwear and resort pieces start to move.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d sm">Late Apr–Jun</div>
+        <div class="n"><b>Cruise/Resort 2028 shows</b> <i>· Various</i><span class="why">Travel-led trends that reach stores in November</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Apr 1<small>Thu</small></div>
+        <div class="n"><b>April Fool's Day</b> <i>· U.S., Europe</i><span class="why">Low-stakes test for playful creative and new email formats</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Mid-Apr</div>
+        <div class="n"><b>U.S. festival season opens</b> <i>· U.S.</i><span class="why">Festival and statement looks; content-led demand</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Apr 22<small>Thu</small></div>
+        <div class="n"><b>Earth Day</b> <i>· Global</i><span class="why">Sustainability storytelling, backed by specifics</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Late Apr</div>
+        <div class="n"><b>Fashion Revolution Week</b> <i>· Global</i><span class="why">Supply-chain transparency and "who made my clothes" content</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>11</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>April · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Swimwear and Resortwear</p>
+    <p class="ctx">Swim and resort pieces start to move as the Northern Hemisphere warms up. At the same time, the Resort 2028 shows begin setting the travel-led trends that reach stores in November.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Apr</div>
+        <div class="n"><b>Swimwear and resortwear launch</b> <i>· Northern Hemisphere</i><span class="why">One of the hardest categories to buy online</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Returns are the Earth Day story most brands miss. Every return adds another round of shipping and handling, and some items never sell at full price again. Since most fashion returns come down to size and fit, helping shoppers choose right the first time is a sustainability move that also protects margin.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>12</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>05 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">05</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">May</h2>
+  </div>
+  <p class="theme">Moms, Red Carpets and the Unofficial Start of Summer</p>
+  <p class="mctx">May mixes one of the biggest gifting dates of the first half with pure aspiration. Mother's Day lands on four different Sundays across your markets, the Met Gala and Cannes drive red-carpet content, and Memorial Day opens summer shopping in the U.S.</p>
+  
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">May 2<small>Sun</small></div>
+        <div class="n"><b>Mother's Day</b> <i>· Spain, Portugal</i><span class="why">First of three May Mother's Days in Europe</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">May 3<small>Mon</small></div>
+        <div class="n"><b>Met Gala</b> <i>· New York</i><span class="why">Traditionally the first Monday of May; drives eveningwear and statement content</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">May 9<small>Sun</small></div>
+        <div class="n"><b>Mother's Day</b> <i>· U.S., Canada, Italy, Germany</i><span class="why">One of the strongest e-commerce gifting dates of the year</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">May 11–22</div>
+        <div class="n"><b>Cannes Film Festival (80th edition)</b> <i>· Cannes</i><span class="why">Anniversary edition; red-carpet and occasionwear inspiration</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">May 30<small>Sun</small></div>
+        <div class="n"><b>Fête des Mères</b> <i>· France</i><span class="why">France's Mother's Day, three weeks after the U.S.</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">May 31<small>Mon</small></div>
+        <div class="n"><b>Memorial Day weekend</b> <i>· U.S.</i><span class="why">Major sale event; swimwear, shorts and sandals</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>13</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>May · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Pre-Fall 2027</p>
+    <p class="ctx">Pre-Fall deliveries start landing late in the month, bringing transitional pieces that can sell at full price before summer sales. Cannes and the Met Gala add red-carpet references for eveningwear and wedding-guest edits.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late May–Jul</div>
+        <div class="n"><b>Pre-Fall 2027 deliveries</b> <i>· Global</i><span class="why">Transitional pieces that sell at full price before summer sales</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Build one Mother's Day engine and run it in every market, swapping only the delivery deadline. These buyers are shopping for a different body, often a different generation, so many default to bags and jewelry. Clear size guidance and easy exchanges make a blouse or dress feel like a safe gift.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>14</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>06 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">06</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">June</h2>
+  </div>
+  <p class="theme">Summer, Menswear and the New Mid-Year Peak</p>
+  <p class="mctx">June is now one of the heaviest retail months on the calendar. Pride runs all month, Father's Day gives menswear its own gifting moment, Florence, Milan and Paris present Spring/Summer 2028 menswear back to back, and Europe's summer sales begin. In 2026, Prime Day moved into June too.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d ">Jun 3–6</div>
+        <div class="n"><b>Miami Swim Week</b> <i>· Miami</i><span class="why">Swimwear trends for the following season</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Jun 18–22</div>
+        <div class="n"><b>Milan Fashion Week Men's</b> <i>· Milan</i><span class="why">SS28 menswear</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jun 22–27</div>
+        <div class="n"><b>Paris Fashion Week Men's</b> <i>· Paris</i><span class="why">SS28 menswear</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d ">Jun 15–18</div>
+        <div class="n"><b>Pitti Immagine Uomo</b> <i>· Florence</i><span class="why">Opens the SS28 menswear buying season</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jun 23–24</div>
+        <div class="n"><b>Pitti Immagine Bimbo</b> <i>· Florence</i><span class="why">SS28 kidswear buying</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jun 23–25</div>
+        <div class="n"><b>Pitti Immagine Filati</b> <i>· Florence</i><span class="why">Yarns and knitwear</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  
+  <footer class="folio"><span>Sizebay</span><span>15</span></footer>
+</section>
+
+<section class="page second dense" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>June · continued</span></header>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Pride Month</b> <i>· U.S., Europe</i><span class="why">Inclusive collections and partnerships; commitment has to outlast June</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jun 20<small>Sun</small></div>
+        <div class="n"><b>Father's Day</b> <i>· U.S., UK, France, Canada</i><span class="why">Menswear gifting; a common accessories-or-gift-card fallback</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jun 23–Jul 20</div>
+        <div class="n"><b>French summer sales (soldes d'été)</b> <i>· France, incl. online</i><span class="why">Legally fixed window; starts a week earlier than usual in 2027</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Late Jun</div>
+        <div class="n"><b>UK and Spanish summer sales begin</b> <i>· UK, Spain</i><span class="why">Mid-season markdowns spread across Europe</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d sm">Late Jun or Jul</div>
+        <div class="n"><b>Amazon Prime Day</b> <i>· U.S., Europe</i><span class="why">Triggers competing sales across the web, not just on Amazon</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Spring/Summer 2028 Menswear</p>
+    <p class="ctx">Florence, Milan, and Paris present SS28 menswear back to back, setting the direction for next year's men's buys. Late in the month, Fall/Winter 2027 previews start reaching loyal customers.</p>
+    <div class="rows"><div class="row">
+        <div class="d ">Jun 21<small>Mon</small></div>
+        <div class="n"><b>First day of summer</b> <i>· Northern Hemisphere</i><span class="why">Summer wardrobe edits and early-bird offers</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Late Jun–Jul</div>
+        <div class="n"><b>Fall/Winter 2027 previews</b> <i>· Global</i><span class="why">Early fall teasers for loyal customers</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Treat late June as a peak, not a lull. Stack Father's Day, the first day of summer and the summer sales into one sequence, and keep a competing offer ready for Prime Day. Gift buyers often guess menswear sizes by how the recipient looks, so clear fit guidance keeps those shirts out of the drawer.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>16</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>07 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">07</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">July</h2>
+  </div>
+  <p class="theme">Peak Summer, Peak Promotions</p>
+  <p class="mctx">July blends couture with clearance. Shoppers are traveling and buying for the season they're living in, Europe's summer sales are in full swing, and the U.S. long weekend gives everyone time to browse. Fall/Winter 2027 starts landing at the end of the month.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d sm">Early Jul</div>
+        <div class="n"><b>Berlin Fashion Week</b> <i>· Berlin</i><span class="why">SS28 emerging and sustainable labels</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Jul 5–8</div>
+        <div class="n"><b>Paris Haute Couture Week</b> <i>· Paris</i><span class="why">FW27 couture; premium content and detail-led storytelling</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d sm">Early Jul</div>
+        <div class="n"><b>Spanish and Italian summer sales</b> <i>· Spain, Italy</i><span class="why">Italy usually opens on the first Saturday of July; regional dates vary</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Jul 4<small>Sun</small></div>
+        <div class="n"><b>Independence Day (observed Mon Jul 5)</b> <i>· U.S.</i><span class="why">Long-weekend sale for summer basics, swim and vacation outfits</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Jul 30<small>Fri</small></div>
+        <div class="n"><b>International Friendship Day</b> <i>· Global</i><span class="why">Two-for-one and referral mechanics</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Late Jul</div>
+        <div class="n"><b>Back-to-school season opens</b> <i>· U.S.</i><span class="why">Some U.S. districts return in early August</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>17</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>July · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Fall/Winter 2027 Launch</p>
+    <p class="ctx">The first knits and outerwear go live late in the month, right next to summer clearance. It's the moment to keep a full-price new-season story running while the sales do their job.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Jul–Aug</div>
+        <div class="n"><b>Fall/Winter 2027 launch begins</b> <i>· Global</i><span class="why">First knits and outerwear go live next to summer clearance</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Use summer sales to clear stock, not to train shoppers to wait. Segment markdown emails by purchase history, and be clear about which sizes are left and how they fit. Clearance leaves stock in fringe sizes, and shoppers who settle for the size they can find become August returns.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>18</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>08 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">08</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">August</h2>
+  </div>
+  <p class="theme">Back to School and the Hand-Off to Fall</p>
+  <p class="mctx">August runs three jobs at once: back-to-school demand, the last of summer clearance and the build-up to fall, which is one of the most important seasons in fashion. Copenhagen and Las Vegas set the tone for the next buying cycle.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d sm">Early Aug</div>
+        <div class="n"><b>Copenhagen Fashion Week</b> <i>· Copenhagen</i><span class="why">SS28 Scandinavian trends</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d sm">Mid-Aug</div>
+        <div class="n"><b>MAGIC Las Vegas</b> <i>· Las Vegas</i><span class="why">U.S. buying for Spring/Summer 2028</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Back to school</b> <i>· U.S. (UK and Europe from late Aug)</i><span class="why">Denim, sneakers, basics and teen style; parents and students shop differently</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Summer clearance</b> <i>· U.S., Europe</i><span class="why">Final markdowns to make room for fall</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>19</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>August · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Fall/Winter 2027 Early Access</p>
+    <p class="ctx">Coats, boots and knitwear go live for loyal customers first, ahead of one of the most important full-price seasons in fashion. Meanwhile, Copenhagen and Las Vegas set the tone for the next buying cycle.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Mid–late Aug</div>
+        <div class="n"><b>Fall previews and early access</b> <i>· Global</i><span class="why">Coats, boots and knitwear go live for loyal customers first</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Back to school speaks to two audiences: parents buying for kids and older students choosing for themselves. Kidswear is one of the hardest categories to size online, since kids grow fast and usually aren't there to try anything on. Size guidance by age and height keeps parents from abandoning the cart instead of guessing.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>20</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>09 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">09</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">September</h2>
+  </div>
+  <p class="theme">Fashion Month and the Real Start of Fall</p>
+  <p class="mctx">September sets up your entire Q4. The Spring/Summer 2028 shows run back to back in New York, London, Milan and Paris, fall officially begins and shoppers come back from summer ready to refresh their wardrobes.</p>
+  <div class="sec"><span class="stamp" style="--r:-1.6deg">Fashion weeks</span><div class="rows"><div class="row">
+        <div class="d sm">Early–mid Sep</div>
+        <div class="n"><b>New York Fashion Week</b> <i>· New York</i><span class="why">Opens the SS28 womenswear season</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d sm">Mid-Sep</div>
+        <div class="n"><b>London Fashion Week</b> <i>· London</i><span class="why">SS28; creative, experimental energy</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Sep 21–27</div>
+        <div class="n"><b>Milan Fashion Week Women's</b> <i>· Milan</i><span class="why">SS28 luxury and tailoring</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Sep 27–Oct 5</div>
+        <div class="n"><b>Paris Fashion Week Women's</b> <i>· Paris</i><span class="why">Closes SS28 fashion month</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec"><span class="stamp" style="--r:1.1deg">Trade shows</span><div class="rows"><div class="row">
+        <div class="d sm">Early Sep</div>
+        <div class="n"><b>Première Vision Paris</b> <i>· Paris</i><span class="why">Fabrics for FW28/29; moved to early September in 2026</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d sm">Mid-Sep</div>
+        <div class="n"><b>MICAM Milano</b> <i>· Milan</i><span class="why">SS28 footwear buying</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div></div>
+  
+  <footer class="folio"><span>Sizebay</span><span>21</span></footer>
+</section>
+
+<section class="page second" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>September · continued</span></header>
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Sep 6<small>Mon</small></div>
+        <div class="n"><b>Labor Day weekend</b> <i>· U.S.</i><span class="why">Last summer clearance plus early fall at an attractive price</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Sep 27<small>Mon</small></div>
+        <div class="n"><b>World Tourism Day</b> <i>· Global</i><span class="why">Travel-ready edits and packing guides</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Fall/Winter 2027 Full Launch</p>
+    <p class="ctx">Fall/Winter 2027 hits full launch, bringing the highest-value categories of the year. At the same time, the SS28 shows give you trend content months before those collections actually ship.</p>
+    <div class="rows"><div class="row">
+        <div class="d ">Sep 23<small>Thu</small></div>
+        <div class="n"><b>First day of fall</b> <i>· Northern Hemisphere</i><span class="why">Cue to lead with coats, boots, knits and layering</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Fall/Winter 2027 full launch</b> <i>· Global</i><span class="why">Highest-value categories of the year</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Fall is where fit matters most and returns cost the most. A coat one size too small can't be layered, and a narrow boot won't get worn. Shoppers spend more per item now, so they're more cautious. The more confident they feel about size and look, the more likely they buy instead of wishlisting.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>22</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>10 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">10</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:126pt">October</h2>
+  </div>
+  <p class="theme">The Holiday Season Starts Now</p>
+  <p class="mctx">On the surface, October is cozy layers and Halloween. Behind the scenes, it's the most important planning month of the year, and for a growing share of shoppers it's already the start of holiday buying.</p>
+  
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d sm">All month</div>
+        <div class="n"><b>Black Friday readiness</b> <i>· U.S., Europe</i><span class="why">Final offers, locked inventory, tested site</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Early–mid Oct</div>
+        <div class="n"><b>Amazon Prime Big Deal Days</b> <i>· U.S., Europe</i><span class="why">Unofficial start of holiday shopping; competitors run early sales the same week</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Oct 11<small>Mon</small></div>
+        <div class="n"><b>Columbus Day / Indigenous Peoples' Day weekend</b> <i>· U.S.</i><span class="why">Fall outerwear and boot promotions</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Oct 31<small>Sun</small></div>
+        <div class="n"><b>Halloween</b> <i>· U.S., UK</i><span class="why">Costumes and statement pieces, bought close to the date; fast shipping matters</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>23</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>October · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Holiday and Party Capsules</p>
+    <p class="ctx">Sequins, velvet and occasionwear go live late in the month, ahead of the peak. For a growing share of shoppers, holiday buying has already started.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Oct</div>
+        <div class="n"><b>Holiday and party capsules go live</b> <i>· Global</i><span class="why">Sequins, velvet and occasionwear before the peak</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Black Friday brings a wave of first-time visitors who've never worn your sizes, and many will leave rather than guess. Review size charts, fit notes, model measurements and imagery on every hero product now, and make sure size guidance and visualization are live and tested before November.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>24</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>11 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">11</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">November</h2>
+  </div>
+  <p class="theme">The Biggest Month of the Year</p>
+  <p class="mctx">For most fashion e-commerce stores, November is where the year is won. Traffic peaks, competition for attention is fierce and shoppers decide faster than at any other time. That makes every point of friction more expensive.</p>
+  
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Nov 1</div>
+        <div class="n"><b>Holiday season begins</b> <i>· U.S., Europe</i><span class="why">Gifting search ramps from here</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 11<small>Thu</small></div>
+        <div class="n"><b>Singles' Day (11.11) / Veterans Day</b> <i>· Global, U.S.</i><span class="why">Growing "treat yourself" moment and a live test for Black Friday offers</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 25<small>Thu</small></div>
+        <div class="n"><b>Thanksgiving</b> <i>· U.S.</i><span class="why">Early access and friends-and-family offers for your best customers</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 26<small>Fri</small></div>
+        <div class="n"><b>Black Friday</b> <i>· U.S., Europe</i><span class="why">The highest-growth day of Cyber Week</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 27<small>Sat</small></div>
+        <div class="n"><b>Small Business Saturday</b> <i>· U.S.</i><span class="why">Independent brands lean into story and service</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 29<small>Mon</small></div>
+        <div class="n"><b>Cyber Monday</b> <i>· U.S., Europe</i><span class="why">The biggest online shopping day of the season</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Nov 30<small>Tue</small></div>
+        <div class="n"><b>Giving Tuesday</b> <i>· U.S.</i><span class="why">Purpose-led campaigns after the discount rush</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>25</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>November · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Resort/Cruise</p>
+    <p class="ctx">Resort pieces arrive in stores late in the month, giving vacation shoppers full-price newness in the middle of discount season.</p>
+    <div class="rows"><div class="row">
+        <div class="d sm">Late Nov–Dec</div>
+        <div class="n"><b>Resort/Cruise collections in store</b> <i>· Global</i><span class="why">Full-price newness for vacation shoppers in the middle of discount season</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>Use Singles' Day as a dress rehearsal, then run Cyber Week in waves: early access, launch, reminder and last chance. Discount shoppers often order two or three sizes of the same item, so November looks strong and January takes it back. Helping them choose right the first time protects margin and core-size stock.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>26</span></footer>
+</section>
+
+<section class="page hero" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>12 / 12</span></header>
+  <div class="mhead">
+    <div class="mtop"><span class="num">12</span><span class="script yr">2027</span></div>
+    <h2 class="mname" style="font-size:96pt">December</h2>
+  </div>
+  <p class="theme">Gifts, Party Looks and the Shipping Deadline</p>
+  <p class="mctx">December is about two things: knowing what to buy and knowing it'll arrive on time. In 2027, Christmas falls on a Saturday and Hanukkah begins on Christmas Eve, so the gifting rush and the shipping deadline both compress into the same week.</p>
+  
+  
+  <div class="sec"><span class="stamp" style="--r:1.5deg">Retail moments</span><div class="rows"><div class="row">
+        <div class="d ">Dec 12<small>Sun</small></div>
+        <div class="n"><b>Double Twelve (12.12)</b> <i>· Global</i><span class="why">A last pre-Christmas sale peak with less competition</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Mid-Dec</div>
+        <div class="n"><b>Holiday shipping cutoffs</b> <i>· U.S., Europe</i><span class="why">The real driver of December demand; Christmas on a Saturday pulls cutoffs earlier</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Dec 24<small>Fri</small></div>
+        <div class="n"><b>Christmas Eve / Hanukkah begins at sundown</b> <i>· U.S., Europe</i><span class="why">Last-minute gift cards and "buy now, gift later"</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Dec 25<small>Sat</small></div>
+        <div class="n"><b>Christmas</b> <i>· Global</i><span class="why">Biggest gifting moment of the year</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Dec 26<small>Sun</small></div>
+        <div class="n"><b>Boxing Day (UK bank holidays Dec 27–28)</b> <i>· UK, Canada, Australia</i><span class="why">Post-holiday sales and gift-card spending</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d ">Dec 26–31</div>
+        <div class="n"><b>Post-holiday sales</b> <i>· U.S., Europe</i><span class="why">Recipients shop for themselves, often in a different size than they received</span></div>
+        <span class="badge pr">Expected</span>
+      </div><div class="row">
+        <div class="d ">Dec 31<small>Fri</small></div>
+        <div class="n"><b>New Year's Eve</b> <i>· Global</i><span class="why">Partywear and sequins, bought close to the date</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div></div></div>
+  <footer class="folio"><span>Sizebay</span><span>27</span></footer>
+</section>
+
+<section class="page second" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>December · continued</span></header>
+  
+  <div class="sec coll">
+    <span class="stamp" style="--r:-0.7deg">Collections</span>
+    <p class="ctit">Partywear and Pre-Fall 2028</p>
+    <p class="ctx">Partywear and sequins sell right up to New Year's Eve, often bought close to the date. Meanwhile, Pre-Fall 2028 previews kick off the next buying cycle.</p>
+    <div class="rows"><div class="row">
+        <div class="d ">Dec 21–22</div>
+        <div class="n"><b>First day of winter</b> <i>· Northern Hemisphere</i><span class="why">Cold-weather essentials and layering bundles</span></div>
+        <span class="badge ok">Confirmed</span>
+      </div><div class="row">
+        <div class="d sm">Dec–Jan</div>
+        <div class="n"><b>Pre-Fall 2028 previews</b> <i>· Global</i><span class="why">Buyers start the next cycle</span></div>
+        <span class="badge pr">Expected</span>
+      </div></div>
+  </div>
+  <div class="tip" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+     <span class="stamp" style="--r:1.1deg">E-commerce tip</span>
+     <p>With Christmas on a Saturday, shipping cutoffs land earlier than usual. Put last order dates on the homepage, product pages and every email, then switch to express delivery and gift cards. Helping gift buyers get the size right before checkout means fewer January returns and a better first experience for the recipient.</p>
+   </div>
+  <footer class="folio"><span>Sizebay</span><span>28</span></footer>
+</section>
+
+<section class="page plan qplan" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>Quarterly planning</span></header>
+  <div class="stampwrap"><span class="stamp" style="--r:1.5deg">Quarterly planning</span></div>
+  <h2 class="h-mid">Your Quarter-Ahead Checklist</h2>
+  <div class="two"><p>Run this checklist about eight weeks before each quarter starts. The first block repeats every quarter; the second covers what's specific to that quarter's peaks.</p></div>
+  <div class="qtable">
+    <div class="qr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="qa"><span class="q1">Q1</span><span class="q2">Jan–Mar</span></div>
+        <div class="qb"><em>Run it by</em><b>Early November</b></div>
+        <div class="qc"><em>Peaks to prepare</em><span>Winter sales, Valentine's Day, early Easter (Mar 28), UK Mothering Sunday</span></div>
+        <div class="qd"><em>Quarter-specific checks</em><span>Clearance edits by size availability; gift guides that work when the buyer isn't the wearer; spring imagery shot by mid-February</span></div></div><div class="qr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="qa"><span class="q1">Q2</span><span class="q2">Apr–Jun</span></div>
+        <div class="qb"><em>Run it by</em><b>Early February</b></div>
+        <div class="qc"><em>Peaks to prepare</em><span>Mother's Day (four dates), Memorial Day, Father's Day, Prime Day, summer sales</span></div>
+        <div class="qd"><em>Quarter-specific checks</em><span>Swimwear fit content; one Mother's Day engine with per-market deadlines; a competing offer ready for Prime Day</span></div></div><div class="qr" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="qa"><span class="q1">Q3</span><span class="q2">Jul–Sep</span></div>
+        <div class="qb"><em>Run it by</em><b>Early May</b></div>
+        <div class="qc"><em>Peaks to prepare</em><span>Summer clearance, back to school, Labor Day, fall launch</span></div>
+        <div class="qd"><em>Quarter-specific checks</em><span>Kidswear size guidance by age and height; fall outerwear and boot fit notes; SS28 runway content templates</span></div></div><div class="qr" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="qa"><span class="q1">Q4</span><span class="q2">Oct–Dec</span></div>
+        <div class="qb"><em>Run it by</em><b>Early August</b></div>
+        <div class="qc"><em>Peaks to prepare</em><span>Prime Big Deal Days, Singles' Day, Black Friday to Cyber Monday, Christmas, Boxing Day</span></div>
+        <div class="qd"><em>Quarter-specific checks</em><span>Stock depth in core sizes on hero products; site and fit tools stress-tested by mid-October; extended holiday return windows communicated clearly</span></div></div>
+  </div>
+  <footer class="folio"><span>Sizebay</span><span>29</span></footer>
+</section>
+
+<section class="page check" style="--bg:#FFFFFF;--ink:#0B0B0B;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>Quarterly planning checklist</span></header>
+  <div class="stampwrap"><span class="stamp" style="--r:1.1deg">Checklist</span></div>
+  <h2 class="h-mid">Is Your Business Ready for the Next Quarter?</h2>
+  <p class="cintro">Use this checklist to review the key points of your operation's planning.</p>
+  <div class="grid">
+    <div class="qcard" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="qh"><span class="qt">Q1</span><span class="qp">January to March</span></div>
+        <ul><li><span class="box"></span><span>Analyze last year's results.</span></li><li><span class="box"></span><span>Review inventory and plan winter sales.</span></li><li><span class="box"></span><span>Map trends and references for new collections.</span></li><li><span class="box"></span><span>Plan purchasing and restocking.</span></li><li><span class="box"></span><span>Organize campaigns for Valentine's Day, Presidents' Day and Easter.</span></li></ul>
+      </div><div class="qcard" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="qh"><span class="qt">Q2</span><span class="qp">April to June</span></div>
+        <ul><li><span class="box"></span><span>Prepare the launch and promotion of Spring/Summer collections.</span></li><li><span class="box"></span><span>Plan campaigns for Mother's Day, Father's Day and Memorial Day.</span></li><li><span class="box"></span><span>Review product and size performance.</span></li><li><span class="box"></span><span>Plan purchasing for Fall/Winter.</span></li><li><span class="box"></span><span>Evaluate opportunities for special launches.</span></li></ul>
+      </div><div class="qcard" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+        <div class="qh"><span class="qt">Q3</span><span class="qp">July to September</span></div>
+        <ul><li><span class="box"></span><span>Plan sales and inventory renewal.</span></li><li><span class="box"></span><span>Prepare Fall/Winter launches.</span></li><li><span class="box"></span><span>Update storefronts and store content.</span></li><li><span class="box"></span><span>Plan campaigns for Back to School and Labor Day.</span></li><li><span class="box"></span><span>Start planning for Black Friday.</span></li></ul>
+      </div><div class="qcard" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+        <div class="qh"><span class="qt">Q4</span><span class="qp">October to December</span></div>
+        <ul><li><span class="box"></span><span>Review inventory and size availability.</span></li><li><span class="box"></span><span>Organize campaigns for Black Friday, Cyber Week and Christmas.</span></li><li><span class="box"></span><span>Prepare your operation for a higher volume of orders.</span></li><li><span class="box"></span><span>Set holiday shipping cutoffs and return windows.</span></li><li><span class="box"></span><span>Analyze the year's results and plan for 2028.</span></li></ul>
+      </div>
+  </div>
+  <p class="closing">Remember: planning isn't something you do just once. Track your results, revise your strategies and adapt the calendar to your business's needs.</p>
+  <footer class="folio"><span>Sizebay</span><span>30</span></footer>
+</section>
+
+<section class="page cta" style="--bg:#FF9ACB;--ink:#0B0B0B;--accent:#0B0B0B;--sbg:#0B0B0B;--sfg:#FF9ACB">
+  <header class="run"><span>The 2027 Fashion Retail Calendar</span><span>Sizebay</span></header>
+  <div class="cluster">
+    <span class="stamp big" style="--r:-2deg;left:0;top:0;z-index:1">Right size</span>
+    <span class="stamp big" style="--r:1.5deg;left:38mm;top:20mm;z-index:2">More conversion</span>
+    <span class="stamp big" style="--r:-1deg;left:6mm;top:40mm;z-index:3">Fewer returns</span>
+  </div>
+  <div class="spacer"></div>
+  <h2 class="h-huge">The dates bring the traffic. <span class="script">Confidence</span> closes the sale.</h2>
+  <div class="ctabody">
+    <p>Every peak on this calendar brings shoppers who behave differently from your regulars: gift buyers guessing someone else's size, first-time visitors who've never worn your brand, and customers stepping into categories they buy once a year. Before they buy, they all ask the same question: will this fit me? When the answer is a guess, you see it as hesitation at checkout, abandoned carts, bracketed orders and a heavy returns month after every peak.</p><p>Sizebay gives shoppers a complete decision experience right on the product page. Size recommendation suggests the right size based on the shopper's body and on how each piece is actually cut, and virtual try-on lets them see how it will look before they add it to the cart. Together, they turn calendar traffic into confident purchases, so the sales your campaigns generate are sales you keep.</p>
+  </div>
+  <p class="kicker">Plan the experience alongside the promotions, and 2027 will reward both.</p>
+  <a class="btn" href="https://sizebay.com/">Talk to a Sizebay Specialist →</a>
+  <p class="loop">Stay in the loop: follow the Sizebay blog and newsletter for fashion calendars, consumer behavior studies and e-commerce insights.<br><b>@sizebay  |  @sizebay.global  |  @sizebay.it</b></p>
+  <footer class="folio"><span>Sizebay</span><span>31</span></footer>
+</section>
+
+<section class="page back" style="--bg:#0B0B0B;--ink:#FFFFFF;--accent:#FF9ACB;--sbg:#FF9ACB;--sfg:#0B0B0B">
+  <div class="stamps">
+    <span class="stamp big" style="--r:-2deg">Fashion</span>
+    <span class="stamp big" style="--r:1.5deg">E-commerce</span>
+    <span class="stamp big" style="--r:-1deg">Experience</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="brand">Sizebay</div>
+  <p class="bt">Tailored solutions for your fashion e-commerce.</p>
+  <div class="links"><a href="https://sizebay.com/">Website</a><span>·</span><a href="https://www.linkedin.com/company/sizebay/">LinkedIn</a><span>·</span><a href="https://www.instagram.com/sizebay.global/">Instagram</a></div>
+</section></body></html>
