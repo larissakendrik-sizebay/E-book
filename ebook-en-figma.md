@@ -445,28 +445,28 @@ Run this checklist about eight weeks before each quarter starts. The first block
 
 Use this checklist to review the key points of your operation's planning.
 
-**Q1 — January to March**
+**1st quarter — January to March**
 - Analyze last year's results.
 - Review inventory and plan winter sales.
 - Map trends and references for new collections.
 - Plan purchasing and restocking.
 - Organize campaigns for Valentine's Day, Presidents' Day and Easter.
 
-**Q2 — April to June**
+**2nd quarter — April to June**
 - Evaluate opportunities for special launches.
 - Review product and size performance.
 - Plan campaigns for Mother's Day, Father's Day and Memorial Day.
 - Plan purchasing for Fall/Winter.
 - Prepare the launch and promotion of Spring/Summer collections.
 
-**Q3 — July to September**
+**3rd quarter — July to September**
 - Plan sales and inventory renewal.
 - Prepare Fall/Winter launches.
 - Update storefronts and store content.
 - Plan campaigns for Back to School and Labor Day.
 - Start planning for Black Friday.
 
-**Q4 — October to December**
+**4th quarter — October to December**
 - Review inventory and size availability.
 - Organize campaigns for Black Friday, Cyber Week and Christmas.
 - Prepare your operation for a higher volume of orders.
